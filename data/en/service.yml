@@ -1,0 +1,94 @@
+################################# Service #################################
+service:
+  enable : true
+  title : Our Services
+  service_item :
+    # service item loop
+    - name : Investment Deal Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Internal Audit Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Accounting Setup
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Corporate Training Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+     # service item loop
+    - name : Taxation Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+     # service item loop
+    - name : Business Proposal Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Financing Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Payroll Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : MIC Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+    # service item loop
+    - name : Accounting & Bookkeeping Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+     # service item loop
+    - name : Company Formation Service
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : 
+      button:
+          enable : true
+          label : "SeeMore"
+          link : ""
+      

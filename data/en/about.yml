@@ -1,0 +1,20 @@
+############################# About ###################################
+about:
+  enable : true
+  title : About Us
+  about_item :
+  - icon : ti-medall # themify icon pack : https://themify.me/themify-icons
+    title :  Qualified Consultants 
+    content :  you are in safe hands as all our accountants and financial consultants are qualified.
+
+  - icon : ti-cup # themify icon pack : https://themify.me/themify-icons
+    title : We're Professional
+    content : we are governed by MICPA and we follow the professional and ethical guideline. 
+
+  - icon : ti-thought # themify icon pack : https://themify.me/themify-icons
+    title : We're Different
+    content : we offer more than just business and financial consulting – we make it a point to truly understand our clients’ businesses requirements to provide quality services and bespoke solutions that optimize people, processes, and profit.
+
+  - icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
+    title : We're pro-active
+    content :  we are pro-active and accountable because we are a medium firm and easy to reach.We welcome you and assure you of 100% satisfaction.

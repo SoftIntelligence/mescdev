@@ -1,0 +1,13 @@
+############################### Banner ################################
+banner:
+  enable : true
+  bg_image_webp : "MH.webp"
+  bg_image : "MH.jpg"
+  icon : "" # themify icon pack : https://themify.me/themify-icons
+  title : " Myanmar Enterprise Solutions "
+  content : "Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their accounting and corporate financial planning needs.
+"
+  button:
+    enable : true
+    label : "Explore Us"
+    link : "#services"
