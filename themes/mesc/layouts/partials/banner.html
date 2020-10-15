@@ -3,11 +3,25 @@
 {{ if $data.banner.banner.enable }}
 {{ with $data.banner.banner }}
 {{"<!-- Welcome Slider-->" | safeHTML}}
-<section class="hero-area" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
+<section class="hero-area">
 	<!-- this image is for trigger this section fallback background image -->
-	<img class="lozad d-none" data-src="{{ .bg_image_webp | absURL }}" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
+	<div id="page">
+        <ul class="cb-slideshow" style="position: absolute;">
+            <li><span>Image 01</span><<div class="block">
 
-	<div class="block">
+		<div class="video-button">
+			<i class=""></i>
+		</div>
+	
+		<h1>Myanmar Enterprise Solutions</h1>
+		<p>Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their accounting and corporate financial planning needs</p>
+	
+		<a href="{{ .link }}" class="btn btn-transparent page-scroll" style="z-index: 999;">Explore Us</a>
+
+
+	</div></li>
+            <li><span>Image 02</span>
+            	<<div class="block">
 		{{ if .icon }}
 		<div class="video-button">
 			<i class="{{ .icon }}"></i>
@@ -17,11 +31,23 @@
 		<p>{{ .content | markdownify }}</p>
 		{{ if .button.enable }}
 		{{ with .button }}
-		<a href="{{ .link }}" class="btn btn-transparent page-scroll">{{ .label }}</a>
+		<a href="{{ .link }}" class="btn btn-transparent page-scroll" style="z-index: 999;">{{ .label }}</a>
 		{{ end }}
 		{{ end }}
-	</div>
+
+	</div></li>
+            <li><span>Image 03</span><div><h3>bal·ance</h3></div></li>
+            <li><span>Image 04</span><div><h3>e·qua·nim·i·ty</h3></div></li>
+            <li><span>Image 05</span><div><h3>com·po·sure</h3></div></li>
+            <li><span>Image 06</span><div><h3>se·ren·i·ty</h3></div></li>
+        </ul>
+       
+    </div>
+	
+
+	
 </section>
 {{"<!-- /Welcome Slider-->" | safeHTML}}
+
 {{end}}
 {{end}}

@@ -62,13 +62,13 @@ url = "team"
 weight = 4
 
 [[menu.main]]
-name = "pricing"
+name = "News"
 pre = "#"
-url = "pricing"
+url = ""
 weight = 5
 
 [[menu.main]]
-name = "learning"
+name = "learning Center"
 pre = "#"
 url = "blog"
 weight = 6
@@ -152,6 +152,6 @@ languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
 home = "Home"
-copyright = "Copyright &copy; 2020 Myanmar Enterprise Solutions | Powered by [Soft Intelligence](https://softintelligencemm.com)"
+copyright = "Copyright &copy; 2020 Myanmar Enterprise Solutions | Powered by"
 
 

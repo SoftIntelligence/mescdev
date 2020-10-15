@@ -18,6 +18,12 @@
 	{{ $styles := resources.Get "css/style.css" | minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
+	{{ $styles1 := resources.Get "css/style1.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles1.Permalink }}" media="screen">
+
+	{{ $styles2 := resources.Get "css/demo.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles2.Permalink }}" media="screen">
+
 	{{"<!-- Custom stylesheet - for your changes -->" |safeHTML}}
 	{{ $custom := resources.Get "css/custom.css" | minify }}
   <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
@@ -25,7 +31,7 @@
 	{{ "<!--Favicon-->" | safeHTML }}
 	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
-
+	<script type="text/javascript" src="/js/modernizr.custom.86080.js"></script>
 	{{ with site.Params.google_analytics_id }}
 	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics -->" | safeHTML }}
 	<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>

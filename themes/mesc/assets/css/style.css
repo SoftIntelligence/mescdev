@@ -325,7 +325,17 @@ a:hover {
 .section-bg {
   background: #292F36;
 }
-
+.logo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 31px 0 28px 14px;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    background: #1d2024;
+  }
 .overly {
   position: relative;
 }
@@ -552,10 +562,14 @@ a:hover {
   border-bottom: 2px solid transparent;
   transition: .5s all;
   margin-bottom: 20px;
+  height: 420px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .about .block:hover {
   border-bottom: 2px solid #57cbcc;
+  height: 100%;
 }
 
 .about .block:hover .icon-box {
