@@ -4,31 +4,33 @@ feature:
   image : images/about/Finance-1.jpg
   image_webp : images/about/Finance-1.webp
   title : Why MES
-  content : "MES’s talented partners and associates specialize in the areas of accounting setup, assurance, financial planning, and business advisory who really love what we do and we strongly believe that small and mid-size businesses gain far more benefits from having experienced financial, human resources and virtual assistant expertise than larger companies who actually can afford to have this experience on staff."
+  content : "Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their
+accounting and corporate financial planning needs. We were registered as a non-audit firm with the
+registration no NCC 002 since 2016 which is the second firm approved by MAC. (Myanmar Accountancy
+Council). We offer the most flexible professional accounting and financial solutions tailored specifically to
+your individual requirements by providing a range of services."
   feature_item : 
       # feature item loop
-    - title : Proven track record
+    - title : 
       icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content :  At MES  we understand you want an advisor who can provide more than traditional accounting solutions. We offer more than just business consulting – we make it a point to truly understand our clients’ businesses requirements to provide quality services and solutions that optimize people, processes and profit. Our approach that heavily emphasizes capability development and client enablement, we leave our clients in a position where they are self-sufficient and better equipped to operate, maintain and transform their workflow. The result:a proven track record of satisfied clients enjoying longer term sustainability and returns, long after the completion of our assignments.
+      content :  It means you are in safe hands as all our accountants and financial consultants are qualified.
 
       
       # feature item loop
-    - title : In-depth expertise
+    - title : 
       icon : ti-panel # themify icon pack : https://themify.me/themify-icons
-      content : Our senior partners offer specialized skills and expertise, as well as the winning attitude, character and communication skills necessary to help clients achieve their objectives. The activity of first-class service teams will not only leave customers with answered questions but drive customer communication, satisfaction and loyalty. Unlike other providers, we’ve analyzed the data, studied the current condition and done the in-depth commitment, can help to develop a more detailed picture of your needs and understand how to target them.
-
+      content : It means professional as we are governed by MICPA and we follow the professional and ethical guideline.
       # feature item loop
-    - title : Customized solutions
+    - title : 
       icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-      content : Your business is unique and so are the solutions that will drive it forward. At MES, we provide our clients with solutions that are tailored to meet their business objectives. From strategy and governance to implementation, we offer consulting, staff augmentation and a host of supporting services tailored to project requirements. Depending on our clients’ needs, our services are available on a fixed or variable basis.
+      content : It means we are different; we offer more than just business and financial consulting – we make it a point to truly understand our clients’ businesses requirements to provide quality services and bespoke solutions that optimize people, processes, and profit.
 
       
       # feature item loop
-    - title : Approved by the Myanmar Accountancy Council
+    - title : 
       icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Myanmar Accountancy Council (MAC) was formed by the Myanmar Accountancy Law (1972) which is oversight the professional accounting firms and audit firms. We were registered as a non-audit firm with the registration no NCC 002 since 2016 which is the second firm approved by MES.
-
-    - title : Strategic Alliance Partner
+      content : It means we are proactive and accountable because we are a medium firm and easy to reach.
+    
+    - title : 
       icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Our core capabilities together with our Strategic Alliance Partner’s expertise – Allen & Gledhill (International Legal Firm), Cho Group Audit (Local Audit Firm), Crowe Horwath (International Audit Firm), MCC and MBC (Integrated Accounting System Partner) - give you the financial, technological, legal and strategic advantage. One of our primary roles is to combine complementary strengths, we can optimize the integration of the systems and offer great products to the customer. This creates a win/win situation for all partners involved, our customers in the first place.
-
+      content : We welcome you and assure you of 100% satisfaction.
