@@ -1,3 +1,103 @@
+
+<style type="text/css">
+	@import "compass/css3";
+
+
+
+.testimonial-quote {
+    font-size: 16px;
+}
+
+.testimonial-quote blockquote {
+    /* Negate theme styles */
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    color: gray;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.4 !important;
+    margin: 0;
+    position: relative;
+    text-shadow: 0 1px white;
+    z-index: 600;
+}
+
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+.testimonial-quote blockquote p {
+    color: #75808a; 
+    line-height: 1.4 !important;
+}
+
+.testimonial-quote blockquote p:first-child:before {
+    content: '\201C';
+    color: #81bedb;
+    font-size: 7.5em;
+    font-weight: 700;
+    opacity: .3;
+    position: absolute;
+    top: -.4em;
+    left: -.2em;    
+    text-shadow: none;
+    z-index: -300;
+}
+
+.testimonial-quote img {
+    border: 3px solid #9CC1D3;
+    border-radius: 50%;
+  
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    position: absolute;
+    top: -.2em; 
+    left: 0;    
+}
+
+.testimonial-quote cite {
+    color: gray;
+    display: block;
+    font-size: .8em; 
+}
+  
+.testimonial-quote cite span {
+    color: #5e5e5e;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 1px white; 
+}
+
+.testimonial-quote {
+    position: relative; 
+}
+
+.testimonial-quote .quote-container {
+    padding-left: 160px; 
+}
+  
+.testimonial-quote.right .quote-container {
+    padding-left: 0;
+    padding-right: 160px; 
+}
+
+.testimonial-quote.right img {
+    left: auto;
+    right: 0;
+}
+
+.testimonial-quote.right cite {
+    text-align: right; 
+}
+</style>
 {{ $data := index site.Data site.Language.Lang }}
 
 {{ if $data.about.about.enable }}
@@ -24,6 +124,18 @@ size businesses gain far more benefits from having experienced financial, human 
 assistant expertise than larger companies who actually can afford to have this experience on staff.
 			</p>
 
+<div style="width: 960px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px;"> 
+
+    <h1>Our Mission</h1>
+    <div class="testimonial-quote group">
+        <div class="quote-container">
+            <blockquote>
+                <p>To promote the Myanmar SME Owners feel confident about their financial future.”</p>
+            </blockquote>  
+            
+        </div>
+    </div> 
+    </div>   
 			{{ range .about_item }}
 			{{"<!-- About item -->" | safeHTML}}
 			<div class="col-lg-4 text-center wow fadeInUp" data-wow-duration="500ms" style="padding-bottom:20px;">
@@ -45,3 +157,22 @@ assistant expertise than larger companies who actually can afford to have this e
 {{"<!-- /about -->" | safeHTML}}
 {{ end }}
 {{ end }}
+
+<div style="width: 960px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px; margin-bottom: 40px;"> 
+
+   
+    <div class="testimonial-quote group">
+        <img src="/images/CEO.png">
+        <div class="quote-container">
+         
+              
+            <cite><span>Myo Hein</span><br>
+                 B.Econ(Stat), Master of Banking & Finance, CPA, ACCA (Final), IADCS, Dip in IT<br>
+				
+				Chief Executive Officer<br> 
+				
+				Myanmar Enterprise Solutions
+            </cite>
+        </div>
+    </div>  
+    </div>  

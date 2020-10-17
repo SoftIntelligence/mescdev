@@ -43,14 +43,14 @@ link = "plugins/google-map/map.js"
 ############################# Navigation ##################################
 [[menu.main]]
 name = "about"
-pre = "#"
-url = "about"
+pre = ""
+url = "/about"
 weight = 1
 
 [[menu.main]]
 name = "services"
-pre = "#"
-url = "services"
+pre = ""
+url = "/services"
 weight = 2
 
 
@@ -63,26 +63,26 @@ weight = 4
 
 [[menu.main]]
 name = "News"
-pre = "#"
-url = ""
+pre = ""
+url = "news"
 weight = 5
 
 [[menu.main]]
 name = "learning Center"
-pre = "#"
-url = "blog"
+pre = ""
+url = "/learning"
 weight = 6
 
 [[menu.main]]
 name = "News"
-pre = "#"
-url = ""
+pre = ""
+url = "/news"
 weight = 7
 
 [[menu.main]]
 name = "Tax"
-pre = "#"
-url = ""
+pre = ""
+url = "/tax"
 weight = 8
 
 [[menu.main]]
@@ -117,10 +117,7 @@ expire_days = 2
 # google map
 [params.map]
 enable = true
-gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
-map_marker = "images/marker.png"
+
 
 ############################# social icons ##########################
 [[params.social]]
