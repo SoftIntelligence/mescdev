@@ -8,7 +8,7 @@ team:
      
       image : images/CEO.png
       designation : CEO
-      content : Life Philosophy  “Lifelong learning is the key to success”
+      content : Life Philosophy<br> <br/> "Lifelong learning is the key to success”
 
       social :
         - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
