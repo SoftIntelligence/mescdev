@@ -53,6 +53,12 @@ pre = ""
 url = "/services"
 weight = 2
 
+[[menu.main]]
+name = "Team"
+pre = "/"
+url = "about/#team"
+weight = 2
+
 
 
 
@@ -73,6 +79,8 @@ name = "News"
 pre = ""
 url = "/news"
 weight = 7
+
+
 
 [[menu.main]]
 name = "Tax"
