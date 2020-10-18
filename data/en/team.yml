@@ -8,8 +8,13 @@ team:
      
       image : images/CEO.png
       designation : CEO
-      content : Life Philosophy<br> <br/> "Lifelong learning is the key to success”
+      content : B.Econ(Stat), MBF, CPA, ACCA(Final),IADCS,Dip (IT)
 
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959253262626"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: ceo@mesc.pro"
       social :
         - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
           link : "#"
@@ -21,12 +26,16 @@ team:
           link : "#"
         
     # team member loop
-    - name : U Htu Htu Aung 
+    - name : May Thwe Oo 
    
-      image : images/Chairman.png
-      designation : Chairman
-      content : Life Vision  “Helping Myanmar's Institutions to be stronger”
-
+      image : images/default.png
+      designation : COO
+      content : B.Sc (Maths), MBF,ACCA(Final), DA, DFAc
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +9595203143"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: coo@mesc.pro"
       social :
         - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
           link : "#"
@@ -38,11 +47,36 @@ team:
           link : "#"
         
     # team member loop
-    - name : Mr Chan @ U Kyaw Zaw
-      image : images/Consultant.png
-      designation : Consultant
-      content : Life Philosophy  “A bird is safe in its nest - but that is not what its wings are made for.”
+    - name : Poe Ei Phyu
+      image : images/default.png
+      designation : Finance
+      content : Advance Diploma in Accounting & Business(ACCA)
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959253388122"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: finance@mesc.pro"
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
 
+    # team member loop
+    - name : Ei Myat Kyaw 
+   
+      image : images/default.png
+      designation : .
+      content : B.Sc (IC) , ACCA (Part II),EDBF
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959253388177"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: investment@mesc.pro"
       social :
         - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
           link : "#"
@@ -53,4 +87,211 @@ team:
         - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
           link : "#"
         
+    # team member loop
+    - name : Zin Oo
+      image : images/default.png
+      designation : .
+      content : B.Sc (Maths), Dip in M.A,ACCA (Applied Skill)
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959253388155"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: "
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+
+    # team member loop
+    - name : Cho Lei Lei Than 
    
+      image : images/default.png
+      designation : .
+      content : B.A (Eco),Dip in Accounting
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959253388144"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : "Email: corporate@mesc.pro"
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        
+    # team member loop
+    - name : Thynn Myat Pwint Thu
+      image : images/default.png
+      designation : .
+      content : B.C.Sc (BIS),Dip in Accounting & Finance,ACCA (Part I)
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959780081231"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+
+    
+    # team member loop
+    - name : Thiri Zaw
+   
+      image : images/default.png
+      designation : .
+      content : B.Sc (Math), EDBF
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959400422120"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        
+    # team member loop
+    - name : Kyaw Htet Thu
+      image : images/default.png
+      designation : .
+      content : B.A (Eco), Dip IFR, Dip in Accounting
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959262510747"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+    
+    # team member loop
+    - name : Han Su Zaw 
+   
+      image : images/default.png
+      designation : .
+      content : B.A (BM), Dip in Accounting
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959795265075"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        
+    # team member loop
+    - name : Nyan Lwin Aung
+      image : images/default.png
+      designation : .
+      content : B.B.A , Dip in Accounting,Dip in M.A
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959254017796"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+
+    # team member loop
+    - name : Khine Thazin Htet
+   
+      image : images/default.png
+      designation : .
+      content : Bachelor of Law (LL.B)Dip in Accounting,Dip in Accounting & Business (ACCA)
+
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959765100548"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        
+    # team member loop
+    - name : Thin Zar Nwe
+      image : images/default.png
+      designation : .
+      content : B.A (BM), Dip in Accounting, ACCA (Part I)
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959488388033"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+
+    # team member loop
+    - name : Nyein Ei Phyu 
+   
+      image : images/default.png
+      designation : .
+      content : B.BSc (BS),Master of Accounting & Finance
+      contact_list:
+        - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+          info : "Phone: +959252227008"
+        - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+          info : ""
+      social :
+        - icon : ti-facebook # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        - icon : ti-dribbble # themify icon pack : https://themify.me/themify-icons
+          link : "#"
+        
+  

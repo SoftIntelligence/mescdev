@@ -1053,6 +1053,10 @@ a:hover {
 .member-photo {
   overflow: hidden;
   position: relative;
+  height: 300px;
+  width: 250px;
+  object-fit: cover;
+
 }
 
 @media (max-width: 768px) {

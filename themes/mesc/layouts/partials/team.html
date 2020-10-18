@@ -39,6 +39,12 @@
             <h4>{{ .name }}</h4>
             <span>{{ .designation | markdownify}}</span>
             <p>{{ .content | markdownify }}</p>
+            {{ range .contact_list }}
+            <div class="con-info clearfix">
+            <i class="{{ .icon }}"></i>
+            <span>{{ .info }}</span>
+            </div>
+            {{ end }}
           </div>
         </div>
       </div>
