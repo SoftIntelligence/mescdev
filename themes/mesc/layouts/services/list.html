@@ -1,9 +1,149 @@
 {{ define "main" }}
 
 
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #ffffff00;
+  position: absolute;
+  height: 100%;
+  overflow: scroll;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.mbside{
+	display: none;
+}
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-left: 200px;
+  margin-bottom: 40px;
+  padding: 1px 16px;
+  height: 1000px;
+  background-color: #fff;
+  color: #000000;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    display: flex;
+  
+  }
+  .mbside{
+	display: flex;
+}
+  .sidebar a {
+  
+  	text-align: center;
+  	border-color: #fff;
+  	border-width: 5px;
+  	
+  }
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+
 {{ partial "navigation.html" . }}
 
-{{ partial "about.html" . }}
+<div class="sidebar">
+  
+  <a href="#ids">Investment Deal Service</a>
+  <a href="#about">About</a>
+  <a href="#about">About</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+    <a href="#ids">Investment Deal Service</a>
+</div>
+<section style="height: 800px; overflow: hidden; ">
+<div class="content" id="ids">
+  <h5>Investment Deal Service</h5>
+  <h2>We offer the following services:</h2>
+
+<p>
+	Preparing monthly, quarterly and annual accounting reports
+Prepare accounts in accordance with Myanmar Financial Reporting Standards
+Managing accounting entries, compiling general ledger report, trial balance, profit and loss statement, balance sheet and cash flow statement for statutory reporting and financial analysis
+Preparing year-end draft financial statements including statement of comprehensive income, statement of changes in equity, statement of financial position and notes to the accounts, in accordance with Myanmar Financial 
+</p>
+<p>
+	Reporting Standards
+Bank reconciliation
+Helping in statutory reporting processesand liaison with auditors
+Filling forms required for submission to government agencies
+Computing gross to net salary for employees, and maintaining payroll files for them
+Providing payroll reports for monthly and annual management review
+Computing corporate, commercial and personal taxes
+Preparing and filing corporate tax returns including tax calculation with tax authorities
+Submitting Form 17A and Form 31
+Attending and replying to tax queries raised by the Internal Revenue Department (IRD)
+Advising on double taxation agreements andwithholding tax issues
+Preparing and filing withholding tax returns including claims for double taxation relief
+
+</p>
+
+Bookkeeping & Accounting 
+Annual Report
+Cash Flow Management 
+Financial / Divisional Analysis
+Investor Presentation
+Product Pricing and Costing
+Financial Control
+Debt Planning and reduction
+CFO Consultation
+
+
+
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<br></br>
+<br></br>
+<div class="content" id="about">
+  <h1>lee</h1>
+  <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
+  <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
+
+</div>
+</section>
+
 
 {{ partial "contact.html" . }}
 
