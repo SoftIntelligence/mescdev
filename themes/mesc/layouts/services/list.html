@@ -6,161 +6,211 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+.canvas{
+  padding-top: 30vh;  
+  width: 500px;
+  position: relative;
+  margin: auto;
 
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #ffffff00;
+
+}
+
+.inner{
+  width: 155px;
+  height: 155px;
+  background-color: #A9A9A9;
+  text-align: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.comb{
+  width: 75px;
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 165px;
+  cursor: pointer;
+}
+
+.comb:nth-of-type(2n){
+  top: 120px;
+}
+.inner:hover{
+  background-color: #FF7F50;
+}
+.lbl{
   position: absolute;
-  height: 100%;
-  
+  width: 400px;
+  height: auto;
+  font-size: 40px;
+  color: white;
+  left: 5%;
+  top: 40%;
 }
-
-.sidebar a {
+.sum{
+  position: absolute;
+  width: 400px;
+  height: auto;
+  font-size: 20px;
+  color: white;
+  left: 5%;
+  top: 55%;
+  display: none;
+}
+.lbl2{
+  
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  font-size: 18px;
+  color: white;
+  margin: 55%;
   display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-}
  
-.sidebar a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.mbside{
-	display: none;
-}
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-
-div.content {
-  margin-left: 200px;
-  margin-left: 200px;
-  margin-bottom: 40px;
-  padding: 1px 16px;
-  height: 1000px;
   
 }
+.contact{
+  position: absolute;
+  top:25%;
+  left: 70%;
+  width: 80%;
+  height: 400px;
+  color: #FF7F50;
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: 80px;
-    position: relative;
-    display: flex;
-    overflow: scroll;
-  }
-  .mbside{
-	display: flex;
+
 }
-  .sidebar a {
-  
-  	text-align: center;
-  	border-color: #fff;
-  	border-width: 5px;
-  	
-  }
-  div.content {margin-left: 0;}
+.bg{
+   background-image: url(/Taxation.jpg);
+    height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
-h1 { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
-
-
-p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
-
-
-
-
-
-.date { background: #fe921f; color: #ffffff; display: inline-block; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: bold; line-height: 12px; letter-spacing: 1px; margin: 0 0 30px; padding: 10px 15px 8px; text-transform: uppercase; }
 </style>
-
 {{ partial "navigation.html" . }}
+<div class="bg">
+<label id="lbl" class="lbl"> All Servies</label>  
+<p id="sum" class="sum"></p>
+<div class="canvas" >
 
-<div class="sidebar">
+<div class="comb"><div class="inner" onmouseover="sev1('Company Formation Services')"onmouseout="sev()"><label  class="lbl2">Company Formation Services</label>  </div>
+</div>
+<div class="comb"><div class="inner" onmouseover="sev1('Accounting & Bookkeeping Services')"onmouseout="sev()"><label  class="lbl2">Accounting & Bookkeeping Services</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('MIC Services')"onmouseout="sev()"><label  class="lbl2">MIC Service</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Payroll Services')"onmouseout="sev()"><label  class="lbl2">Payroll Services</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Financing Services')"onmouseout="sev()"><label  class="lbl2">Financing Services</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Business Proposal Service')"onmouseout="sev()"><label  class="lbl2">Business Proposal Service</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Taxation Service')"onmouseout="sev()"><label  class="lbl2">Taxation Servic</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Corporate Training Services')"onmouseout="sev()"><label  class="lbl2">Corporate Training Services</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Accounting Setup')"onmouseout="sev()"><label  class="lbl2">Accounting Setup</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Internal Audit Services')"onmouseout="sev()"><label  class="lbl2">Internal Audit Services</label></div></div>
+<div class="comb"><div class="inner" onmouseover="sev1('Investment Deal Services')"onmouseout="sev()"><label  class="lbl2">Investment Deal Services</label></div></div>
+</div>
+<div class="contact">
   
-  <a href="#ids">Investment Deal Service</a>
-  <a href="#sv2">Internal Audit Service</a>
-  <a href="#sv3">Accounting Setup</a>
-  <a href="#sv4">Corporate Training Service</a>
-  <a href="#sv5">Taxation Service</a>
-    <a href="#sv6">Business Proposal Service</a>
-    <a href="#sv7">Financing Service</a>
-    <a href="#sv8">Payroll Service</a>
-    <a href="#sv9">MIC Service</a>
-    <a href="#sv10">Accounting & Bookkeeping Service</a>
-    <a href="#sv11">Company Formation Service</a>
-</div>
-<section style="height: 800px; overflow: hidden; ">
-<div class="content" id="ids">
-  <h1>Investment Deal Service</h1>
-  <h2>We offer the following services:</h2>
-
-<p>
-	Preparing monthly, quarterly and annual accounting reports
-Prepare accounts in accordance with Myanmar Financial Reporting Standards
-Managing accounting entries, compiling general ledger report, trial balance, profit and loss statement, balance sheet and cash flow statement for statutory reporting and financial analysis
-Preparing year-end draft financial statements including statement of comprehensive income, statement of changes in equity, statement of financial position and notes to the accounts, in accordance with Myanmar Financial 
-</p>
-<p>
-Reporting Standards
-Bank reconciliation
-Helping in statutory reporting processesand liaison with auditors
-Filling forms required for submission to government agencies
-Computing gross to net salary for employees, and maintaining payroll files for them
-Providing payroll reports for monthly and annual management review
-Computing corporate, commercial and personal taxes
-Preparing and filing corporate tax returns including tax calculation with tax authorities
-Submitting Form 17A and Form 31
-Attending and replying to tax queries raised by the Internal Revenue Department (IRD)
-Advising on double taxation agreements andwithholding tax issues
-Preparing and filing withholding tax returns including claims for double taxation relief
-
-</p>
-
-Bookkeeping & Accounting <br>
-Annual Report<br>
-Cash Flow Management<br> 
-Financial / Divisional Analysis<br>
-Investor Presentation<br>
-Product Pricing and Costing<br>
-Financial Control<br>
-Debt Planning and reduction<br>
-CFO Consultation<br>
-
-
+   
+      <h2 style="color: #FF7F50; font-weight: 700;">Contact Us</h2>
+      <div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" style="background-color:#808080; margin-top: 20px; padding: 10px; ">
+        <form id="contact-form" class="form-meghna" method="post" action="#" role="form">
+          <div class="form-group" >
+            <div style="display: inline-block;">
+            <input type="text" placeholder="Firstname " class="form-control" name="first name" id="fname">
+            </div>
+            <div style="display: inline-block;">
+            <input type="text" placeholder="Lastname " class="form-control" name="last name" id="lname">
+            </div>
+          </div>
+          <div class="form-group">
+            <div style="display: inline-block;">
+            <input type="text" placeholder="Company name " class="form-control" name="company" id="company"></div>
+            <div style="display: inline-block;">
+            <input type="Phone" placeholder="Phone No " class="form-control" name="company" id="phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <div style="display: inline-block;">
+            <input type="email" placeholder="email " class="form-control" name="email" id="email">
+          </div>
+          <div style="display: inline-block;">
+            <input type="text" placeholder="subject" class="form-control" name="subject" id="subject">
+          </div>
+          </div>
+          <div class="form-group">
+            <div >
+            <textarea rows="6" placeholder="message " class="form-control" name="message" id="message"></textarea>
+          </div>
+          </div>
+          <div id="cf-submit">
+            <button type="submit" id="contact-submit" class="btn btn-transparent btn-block"
+              value="Submit"></button>
+          </div>
+        </form>
+      </div>
 
 </div>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-<br></br>
-<br></br>
-<div class="content" id="about">
-  <h1></h1>
-  <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
-  <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
 
 </div>
-</section>
+<script type="text/javascript">
+  function sev1(dv){
+    document.getElementById("lbl").innerHTML = dv;
+  
+    switch(dv) {
+  case 'Company Formation Services':
+    document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Myanmar Enterprise Solutions is the Myanmar’s leading expert in company formations. A company or entity can be registered in accordance with the Myanmar Companies Law (2017) and the Special Company Act (1950). ';
+    break;
+  case 'Accounting & Bookkeeping Services':
+    document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.  ';
+    break;
+   case 'MIC Services':
+   document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML ='The Myanmar Investment Commission (MIC) is a government-appointed body under the Ministry of National Planning and Economic Development that appraises Foreign Investment in Myanmar, Local Myanmar Investment and Joint Venture (JV) Investment Proposals of Myanmar and foreign investor.';
+    break;
+    case 'Payroll Services':
+  document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Payroll is arguably the largest expense for businesses, and running it can be a daunting task. Even with a small number of employees, calculating and processing salaries can be a tedious and time consuming process and errors can result in both unhappy employees and fines. To ease the burden, many small businesses are turning to MES payroll services.';
+    break; 
+     case 'Financing Services':
+  document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Our tailored lending service gives you customized borrowing options that can open up new opportunities for your business, help protect your wealth and expand your business. We tailored made strategies involves normal lending in the form of bank loans (Local, Foreign), bridging loan from Finance Companies and Micro Finance. However, as companies’ fund requirements increase, credits grow in size and become more complex. As per our portfolio We deal with all kinds of financing arrangements. ';
+    break;
+     case 'Business Proposal Service':
+   document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML ='A business proposal can make or break your opportunity. A strong business proposal is a vital opportunity to win new business. Crafting a strong business proposal requires a lot of time, effort, planning, commitment, and a set of skills including research, analysis, financial and writing.'; 
+    break;
+     case 'Taxation Service':
+ document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Sound management of a business must include efficient management of the company’s tax liabilities, compliance with the tax regulation, avoiding tax reporting pitfalls and possible penalties. Albert Einstein said that "The hardest thing in the world to understand is the income tax." Tax is an unavoidable expense of business. We can assist our clients in mitigating their business tax risks in Myanmar. Trust our local team of accounting and taxation experts to guide and support your business operations through the calculation, preparation and filing of companies tax declarations, maintaining the company accounts and with the tax payment service.';
+    break;
+     case 'Corporate Training Services':
+   document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML ='At Myanmar Learning Lab Institute, we want you to get the most out of your employees. Our Corporate Training, also known as Corporate Education or more recently Workplace Learning, is a system of activities designed to develop talent and manage the next generation of leaders. The best corporate training programs can build loyalty in a company, while boosting the performance of its managers and improving the shareholder wealth. '; 
+    break;
+     case 'Accounting Setup':
+ document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Behind the every good business is a Great Finance and Account Team. As we know that Accounting is the language of Business that is even complicated and confused, but if you want to be rich, success, it could be the most important matters.';
+    break;
+     case 'Internal Audit Services':
+  document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.'; 
+    break;
+     case 'Investment Deal Services':
+   document.getElementById("sum").style.display = "block";
+     document.getElementById("sum").innerHTML = 'Preparing monthly, quarterly and annual accounting reportsPrepare accounts in accordance with Myanmar Financial Reporting StandardsManaging accounting entries, compiling general ledger report, trial balance, profit and loss statement, balance sheet and cash flow statement for statutory reporting and financial analysis ..etc ';
+    break;
+      
+  default:
+ 
+}
+  }
+   function sev(){
+    document.getElementById("lbl").innerHTML = "All Services";
+    document.getElementById("sum").style.display = "none";
+  }
 
-
-{{ partial "contact.html" . }}
-
-
+</script>
 
 {{ end }}
