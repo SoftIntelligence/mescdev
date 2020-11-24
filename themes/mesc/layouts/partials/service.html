@@ -1,40 +1,250 @@
-{{ $data := index site.Data site.Language.Lang }}
+<style type="text/css">
+*---services block start----*/
 
-{{ if $data.service.service.enable}}
-{{ with $data.service.service}}
-{{"<!-- service -->" | safeHTML }}
-<section id="services" class="bg-one section">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				{{"<!-- section title -->" | safeHTML }}
-				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
-					<h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+.services-shadow {
+	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
+	-webkit-filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
+}
+
+.services {
+	background: #364546;
+	padding: 41px 0 73px 0;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 88.5%, 50% 100%, 0 88.5%);
+	clip-path: polygon(0 0, 100% 0, 100% 88.5%, 50% 100%, 0 88.5%);
+	position: relative;
+}
+
+.services-in {}
+
+.services-in h2 {
+	text-align: center;
+	padding: 0 0 26px 0;
+	color: #ffffff;
+}
+
+.plus {
+	width: 98%;
+	margin: 0 auto;
+	padding: 0 0 24px 221px;
+}
+
+.plus-left {}
+
+.plus-left > ul {}
+
+.plus-left > ul > li {
+	padding: 0 0 8px 0;
+}
+
+.plus-left h3 {
+	color: #139dbf;
+	font-size: 33px;
+	line-height: 35px;
+	padding: 0 0 0 0;
+}
+
+.plus-right {
+	padding: 0 0 0 19px;
+}
+
+.plus-right > ul {}
+
+.plus-right > ul > li {
+	padding: 0 0 1.7px 0;
+}
+
+.plus-right > ul > li > a {
+	letter-spacing: 0px;
+}
+
+.plus-right h3 {
+	color: #8c6aa7;
+	margin: 0;
+	padding: 0 0 1px 0;
+}
+
+.plus-in {
+	padding: 0 0 0 3px;
+}
+
+.plus-left-in {
+	padding: 4px 0 0 0;
+	width: 22px;
+}
+
+.plus-left-in figure {}
+
+.plus-left-in figure em {
+	background: #139dbf;
+	width: 12px;
+	height: 16px;
+	display: inline-block;
+}
+
+.plus-right figure em {
+	background: #8c6aa7;
+}
+
+.plus-left-in img {}
+
+.plus-right-in {}
+
+.plus-right-in a {
+	color: #fff;
+	font-size: 23px;
+	line-height: 25px;
+	font-weight: 400;
+	margin: 0;
+	display: inline-block;
+}
+
+.cover {
+	padding: 0 0 0 24px;
+}
+
+.cover p {}
+
+.cover p > a {
+	font-size: 20px;
+	line-height: 23px;
+	color: #fff;
+	font-weight: 400;
+	display: inline-block;
+	letter-spacing: -0.2px;
+}
+
+	
+
+
+
+
+</style>
+
+
+
+
+
+<<div class="services-shadow">         
+           <div class="services" id="target2">
+            <div class="container">
+               <div class="services-in">
+               <div class="title text-center wow fadeIn" data-wow-duration="500ms">
+					<h2>Our<span class="color">
+						Services</span></h2>
 					<div class="border-meghna"></div>
 				</div>
-			</div>
-			{{"<!-- /section title -->" | safeHTML }}
+                 <br></br>
+                 <br></br>
+                 <br></br>
+                  <div class="plus clearfix d-flex flex-wrap">
+                     <div class="plus-left col-sm-12 col-md-6 col-lg-6">
+                                                
+                        <ul>
+                                                           <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Company Formation Service</a></div>
+                                  </div>
+                               </li>
+                                                         <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">MIC service</a></div>
+                                  </div>
+                               </li>
+                                                         <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Financing Service</a></div>
+                                  </div>
+                               </li>
+                                                         <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Taxation Service</a></div>
+                                  </div>
+                               </li>
+                                                         <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Accounting Setup</a></div>
+                                  </div>
+                               </li>
+                                                         <li>
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Investment Deal Services</a></div>
+                                  </div>
+                               </li>
+                                 
+                                                  </ul>
+                     </div>
+                     <div class="plus-left plus-right col-sm-12 col-md-6 col-lg-6">
+                       
+                        <ul>                           
+                                                          <li class="">
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/life-insurance/">Accounting & Bookkeeping Service</a></div>
 
-			{{ range .service_item}}
-			{{"<!-- Single Service Item -->" | safeHTML }}
-			<article class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="500ms">
-				<div class="service-block text-center">
-					<div class="service-icon text-center">
-						<i class="{{ .icon }}"></i>
-					</div>
-					<h3>{{ .name | markdownify }}</h3>
-					<p>{{ .content | markdownify }}</p>
-					{{ with .button }}
-					<a href="{{ .link }}" class="btn btn-main page-scroll">{{ .label }}</a>
-					{{ end }}
-				</div>
-			</article>
-			{{"<!-- End Single Service Item -->" | safeHTML }}
-			{{ end }}
-		</div>
-	</div>
-</section>
-{{"<!-- /service -->" | safeHTML }}
-{{ end }}
-{{ end }}
+                                  </div>
+                               </li>
+                                                           <li class="">
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/critical-illness-insurance/">Payroll Service </a></div>
+
+                                  </div>
+                               </li>
+                                                           <li class="">
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Business Proposal Service</a></div>
+
+                                  </div>
+                               </li>
+                                                           <li class="">
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/">Corporate Training Service</a></div>
+
+                                  </div>
+                               </li>
+                                                           <li class="">
+                                  <div class="plus-in clearfix d-flex flex-wrap">
+                                     <div class="plus-left-in">
+                                        <figure> <em>&nbsp;</em></figure>
+                                     </div>
+                                     <div class="plus-right-in"><a href="/buildings-contents-insurance/">Internal Audit Service</a></div>
+
+                                  </div>
+                               </li>
+                                                 
+                                                    </ul>
+                     </div>
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
+         </div>

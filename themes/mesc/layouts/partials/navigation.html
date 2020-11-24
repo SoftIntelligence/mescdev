@@ -1,52 +1,219 @@
+<style type="text/css">
+	.header {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
 
-<section class="sticky-top navigation">
-	<div class="logo">
-	<a class="navbar-brand p-0" href="{{ .Site.BaseURL | relLangURL }}">
-				{{ if site.Params.logo }}
-				<img class="lozad" style="width: 80px; height: auto;" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
-				{{ else }}
-				{{ site.Title }}
-				{{ end }}
-			</a>
-	</div>		
-	<div class="container" style="display: flex; justify-content: center;">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			
+.header-top {
+	padding: 0 0 0px 0;
+}
 
-			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+.header-in {}
 
-			<div class="collapse navbar-collapse"  id="navigation">
-				<ul class="navbar-nav ml-auto">
-					{{ range site.Menus.main }}
-					<li class="nav-item">
-            <a class="nav-link" href="{{if .Pre}}{{site.BaseURL | absLangURL}}{{.Pre}}{{ .URL }}{{else}}{{.URL | absLangURL}}{{end}}">{{ .Name }}</a>
-					</li>
-					{{ end }}
-				</ul>
-				<!-- Language List -->
-				{{- if site.IsMultiLingual }}
-				<select id="select-language" onchange="location = this.value;">
-					{{ $siteLanguages := site.Languages}}
-					{{ $pageLang := .Page.Lang}}
-					{{ range .Page.AllTranslations }}
-					{{ $translation := .}}
-					{{ range $siteLanguages }}
-					{{ if eq $translation.Lang .Lang }}
-					{{ $selected := false }}
-					{{ if eq $pageLang .Lang}}
-					<option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
-					</option>
-					{{ else }}
-					<option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
-					{{ end }}
-					{{ end }}
-					{{ end }}
-					{{ end }}
-				</select>
-				{{ end }}
-			</div>
-		</nav>
-	</div>
-</section>
+.header-logo {
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px 0 10px 14px;
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+	background: #ffffff;
+}
+
+
+.header-logo a {
+	text-align: center;
+	display: inline-block;
+}
+
+.header-logo a img {
+	width: 80px;
+	height: auto;
+	object-fit: cover;
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+
+
+.nav-shadow {
+	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
+	-webkit-filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
+}
+
+nav {
+	/*box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.2);*/
+	z-index: 999;
+	position: relative;
+	background: rgba(113, 129, 131, 1);
+	background: -moz-linear-gradient(left, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(113, 129, 131, 1)), color-stop(51%, rgba(130, 145, 146, 1)), color-stop(100%, rgba(149, 164, 164, 1)));
+	background: -webkit-linear-gradient(left, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
+	background: -o-linear-gradient(left, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
+	background: -ms-linear-gradient(left, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
+	background: linear-gradient(to right, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#718183', endColorstr='#95a4a4', GradientType=1);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+	-moz-: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+	-ms-:polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+        -o-:polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+
+	clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+	padding: 23px 0 29px 0;
+}
+
+.nav-in {}
+
+nav ul {
+	margin: 0 0;
+	justify-content: center;
+	align-items: center;
+}
+
+nav ul li {
+	padding: 0 17px 33px;
+}
+
+nav ul li a {
+	display: inline-block;
+	font-size: 20px;
+	color: #ffffff;
+	line-height: 30px;
+	font-weight: 700;
+	letter-spacing: -0.2px;
+}
+nav ul li.active a{color:#000;}
+
+/*--sticky header--*/
+
+
+@media only screen and (max-width:767px){
+
+
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+	line-height: 30px;
+	font-weight: 700;
+	letter-spacing: -0.2px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: cyan;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 13px;
+}
+
+.dropdown-content a:hover {
+  background-color: cyan;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<header class="header">
+            <div class="header-top">
+               <div class="header-in">
+                  <div class="header-logo position-relative">
+                     <a href="/" id="return-to-top"><img src="/MES Logo.png" alt="logo"></a>
+                     
+                  </div>
+                  <div class="nav-shadow">
+                  <nav>
+                     <div class="nav-in">
+                        <ul class="clearfix d-flex flex-wrap justify-content-center align-items-center">
+ 
+
+
+
+
+
+                           <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="#target1">About Us </a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="#target2">Our Service</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="#target6"><div class="dropdown">
+    <button class="dropbtn">Market Data
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Exchange Rate</a>
+      <a href="#">YSX</a>
+      <a href="#">Inflation</a>
+    </div>
+  </div></a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="#target3"><div class="dropdown">
+    <label class="dropbtn">Tax
+      <i class="fa fa-caret-down"></i>
+    </label>
+    <div class="dropdown-content">
+      <a href="#">Tax Calendar</a>
+      <a href="#">Tax Filling Templates</a>
+      <a href="#">Tax Calculartor</a>
+    </div>
+  </div></a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="#target7"><div class="dropdown">
+    <button class="dropbtn">News
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">News</a>
+      <a href="#">Announcement</a>
+      <a href="#">Law & Regulations</a>
+    </div>
+  </div></a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Learning Centre</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Resource</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Events</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Contact us</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Financial Calculator</a></li>
+                        </ul>
+                     </div>
+                     <div class="clearfix"></div>
+                  </nav>
+                  </div>
+               </div>
+            </div>
+         </header>
