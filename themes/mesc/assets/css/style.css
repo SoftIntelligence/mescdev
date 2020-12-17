@@ -27,7 +27,7 @@ h5,
 h6 {
   font-weight: 400;
   font-family: "Quattrocento Sans", sans-serif;
-  color: #afbac4;
+  color: coral;
 }
 
 p {
@@ -141,7 +141,7 @@ a:hover {
 }
 
 .color {
-  color: #6CB670;
+  color: coral;
 }
 
 .sub-title {
@@ -2401,6 +2401,7 @@ figcaption {
   padding: 80px;
 }
 .newsbox{
+  display: flex;
   width: 60%;
   height: 180px;
   background-color: #fff;
@@ -2410,6 +2411,7 @@ figcaption {
   border-color: black;
   border-width: 1px;
   cursor: pointer;
+  margin: 5px;
 
 }
 .thumb{
