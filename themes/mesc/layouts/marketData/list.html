@@ -4,27 +4,172 @@
 {{ partial "navigation.html" . }}
 
 <style type="text/css">
-	
+	@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+
+
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+     -moz-box-shadow: 0 2px 2px -2px #0E1119;
+          box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.container th {
+    background-color: #1F2739;
+}
+
+.container td:first-child { color: #FB667A; }
+.container td:nth-child(2) { color: #FF8C00; }
+.container td:nth-child(3) { color: #FF8C00; }
+.container td:nth-child(4) { color: #FF0000; }
+.container td:nth-child(5) { color: #FF0000; }
+.container td:nth-child(6) { color: #32CD32; }
+.container td:nth-child(7) { color: #32CD32; }
+
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+     -moz-box-shadow: 0 6px 6px -6px #0E1119;
+          box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+  transition-timing-function: line;
+}
+
+
+.warclock{
+  display: block;
+  width: 100%;
+  height: 400px;
+  
+  padding: 10px;
+  background-color: #ffffff00;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.lab{
+    display: inline-block;
+    text-align: right;
+    float: left;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    line-height: 20px;
+    
+}
+.icn{
+  width: 40px;
+  height: auto;
+}
+.tbl{
+  width: 100%;
+  position: relative;
+  overflow: scroll;
+}
+.currency-flag-sm {
+  width: 26px;
+  height: 20px;
+  margin: 5px;
+}
 </style>
 
-<section class="exbg">
-<div id="usd"></div>
-<div id="euro"></div>
-<div id="pound"></div>	
-</section>
-
-<table id="rate">
- <tr>
-    <th>Currency</th>
-    <th>Exchange Rate</th>
-  </tr>
-
-</table>
+<h1></h1> 
+    <!-- table for showing data -->
+    <br>
+    <br>
+    <br>
+    <div class="warclock ">
+    <h4 style="font-size: 60px;">Exchange Rate</h4>  
+    <label id="USD" style="font-size:6vw; color: #FF8C00" class="lab"></label>
+    <label id="EURO" style="font-size:4vw; color: #FF0000"  class="lab"></label>
+    <label id="PLB"style="font-size:4vw; color: #32CD32" class="lab"></label>
+    </div>
+    <div class="tbl"> 
+    <table id="employees" class="container"></table> 
+    </div>
 
 
 <script type="text/javascript">
+const proxyurl = "https://cors-anywhere.herokuapp.com/";  
 const rate = "https://forex.cbm.gov.mm/api/latest";	
-getapi(rate);
+getapi(proxyurl+rate);
 async function getapi(url){
 const response = await fetch(url); 
   
@@ -38,8 +183,22 @@ const response = await fetch(url);
 	
 }
 function showRate(exrate){
-	document.getElementById("usd").innerHTML = exrate.rates.USD;
-
+	document.getElementById("USD").innerHTML ="USD : " + exrate.rates.USD;
+  let tab = 
+    `<tr> 
+    <th>Currency</th> 
+    <th>Exchange Rate</th> 
+   
+    </tr>`; 
+  var rt = exrate.rates;
+  for (var key in rt) {
+  console.log(key , rt[key]); 
+  tab += `<tr> 
+  <td>${key} <img class="currency-flag-sm" src="/flags/${key.toLowerCase()}.png" /> </td> 
+  <td>  ${rt[key]} mmk </td> 
+</tr>`; 
+}
+document.getElementById("employees").innerHTML = tab; 
 }
 </script>
 {{ partial "contact.html" . }}
