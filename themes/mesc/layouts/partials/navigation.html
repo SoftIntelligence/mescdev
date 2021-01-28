@@ -1,6 +1,8 @@
+
 <style type="text/css">
 	.header {
 	position: fixed;
+  background: rgba(113, 129, 131, 1);
 	width: 100%;
   height: auto;
 	z-index: 999;
@@ -48,7 +50,7 @@
 
 
 .nav-shadow {
-  
+
 	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
 	-webkit-filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
 }
@@ -89,15 +91,17 @@ nav ul li {
 	padding: 0 17px 33px;
 }
 
-nav ul li a {
-	display: inline-block;
-	font-size: 13px;
-	color: #ffffff;
-	line-height: 30px;
-	font-weight: 700;
-	letter-spacing: -0.2px;
+ ul li a {
+	
+	 float: none;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 13px;
+
 }
-nav ul li.active a{color:#000;}
+ ul li.active a{color:#000;}
 
 
 /*--sticky header--*/
@@ -130,17 +134,15 @@ nav ul li.active a{color:#000;}
   color: coral;
  }
  .dropdown:hover .dropbtn {
-  font-weight: 0;
-  opacity: 0;
-  color:rgba(113, 129, 131, 1);
+   color: coral;
 }
 
 .dropdown-content {
   display: none;
-  position: relative;
-  margin-top: 40px;
+  position: absolute;
+  padding: 10px;
   min-width: 160px;
-  height: 20vh;
+  height: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 999;
 }
@@ -170,57 +172,55 @@ nav ul li.active a{color:#000;}
                      <a href="/" id="return-to-top"><img src="/MES Logo.png" alt="logo"></a>
                      
                   </div>
-                  <div class="nav-shadow">
-                  <nav>
-                     <div class="nav-in">
-                        <ul class="clearfix d-flex flex-wrap justify-content-center align-items-center">
+                   <ul class="clearfix d-flex flex-wrap justify-content-center align-items-center">
  
 
 
 
 
 
-                           <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/about">About Us </a></li>
-<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="/services">Our Services</a></li>
-<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="#target6"><div class="dropdown">
-    <button class="dropbtn">Market Data
+                           <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/about"> <div class="dropdown"><label class="dropbtn">About Us</label></div> </a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="/services"><div class="dropdown"><label class="dropbtn">Our Service</label></div></a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="/marketdata"><div class="dropdown">
+    <label class="dropbtn">Market Data
       <i class="fa fa-caret-down"></i>
-    </button>
+    </label>
     <div class="dropdown-content">
-      <a href="/marketdata">Market Data</a>
       <a href="#">Exchange Rate</a>
       <a href="#">YSX</a>
       <a href="#">Inflation</a>
     </div>
   </div></a></li>
-<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="#target3"><div class="dropdown">
+<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="/tax"><div class="dropdown">
     <label class="dropbtn">Tax
       <i class="fa fa-caret-down"></i>
     </label>
     <div class="dropdown-content">
-      <a href="#">Tax </a>
       <a href="#">Tax Calendar</a>
       <a href="#">Tax Filling Templates</a>
       <a href="#">Tax Calculator</a>
     </div>
   </div></a></li>
-<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="#target7"><div class="dropdown">
-    <button class="dropbtn">News
+<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="/news"><div class="dropdown">
+    <label class="dropbtn">News
       <i class="fa fa-caret-down"></i>
-    </button>
+    </label>
     <div class="dropdown-content">
-      <a href="#">News</a>
       <a href="#">Announcement</a>
       <a href="#">Law & Regulations</a>
     </div>
   </div></a></li>
-<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Learning Centre</a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Resource</a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Events</a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Contact us</a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Financial Calculator</a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8">Job Links</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Learning Center</label></div></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Resource</label></div></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Events</label></div></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Contact Us</label></div></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Finacial Calculator</label></div></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Job Links</label></div></a></li>
                         </ul>
+                  <div class="nav-shadow">
+                  <nav>
+                     <div class="nav-in">
+                       
                      </div>
                      <div class="clearfix"></div>
                   </nav>
