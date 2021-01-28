@@ -1,6 +1,7 @@
 
 <style type="text/css">
 	.header {
+  margin: 0;  
 	position: fixed;
   background: rgba(113, 129, 131, 1);
 	width: 100%;
@@ -12,10 +13,12 @@
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
+
 }
 
 .header-top {
 	padding: 0 0 0px 0;
+  margin: 0;
 }
 
 .header-in {}
@@ -50,7 +53,7 @@
 
 
 .nav-shadow {
-
+   margin: 0;
 	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
 	-webkit-filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
 }
@@ -59,8 +62,11 @@ nav {
 	/*box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.2);*/
 	
-	position: fixed;
+	position:absolute;
+  top: 0px;
+  margin: 0;
   width: 100%;
+
 	background: rgba(113, 129, 131, 1);
 	background: -moz-linear-gradient(left, rgba(113, 129, 131, 1) 0%, rgba(130, 145, 146, 1) 51%, rgba(149, 164, 164, 1) 100%);
 	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(113, 129, 131, 1)), color-stop(51%, rgba(130, 145, 146, 1)), color-stop(100%, rgba(149, 164, 164, 1)));
@@ -81,7 +87,7 @@ nav {
 
 .nav-in {}
 
-nav ul {
+nav  {
 	margin: 0 0;
 	justify-content: center;
 	align-items: center;
@@ -149,7 +155,7 @@ nav ul li {
 
 .dropdown-content a {
   float: none;
-  color: white;
+  color: coral;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -157,6 +163,7 @@ nav ul li {
 }
 
 .dropdown-content a:hover {
+  color: white;
   background-color: coral;
 }
 
@@ -216,7 +223,7 @@ nav ul li {
 <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Contact Us</label></div></a></li>
 <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Finacial Calculator</label></div></a></li>
 <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Job Links</label></div></a></li>
-                        </ul>
+</ul>
                   <div class="nav-shadow">
                   <nav>
                      <div class="nav-in">
