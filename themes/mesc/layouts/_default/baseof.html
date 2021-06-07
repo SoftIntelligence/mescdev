@@ -3,14 +3,7 @@
 {{ partial "head.html" . }}
 
 
-<script type="text/javascript">
-	var scale = 'scale(1)';
-document.body.style.webkitTransform = scale;      // Chrome, Opera, Safari
- document.body.style.msTransform = scale;         // IE 9
- document.body.style.transform = scale;
-  document.body.style.zoom= '80%';     // General
 
-</script>	
   <div id="content">
     {{ partial "preloader.html" . }}
     {{- block "main" . }}{{- end }}

@@ -453,43 +453,7 @@ a:hover {
   align-items: center;
 }
 
-.hero-area:before {
-  content: '';
-  background: rgba(0, 0, 0, 0.63);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 
-.hero-area .block {
-  text-align: center;
-  z-index: 99;
-}
-
-.hero-area .block .video-button {
-  background: #fff;
-  color: #57cbcc;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  border-radius: 50px;
-}
-
-.hero-area .block .video-button i {
-  line-height: 60px;
-  font-size: 20px;
-  margin-left: 3px;
-}
-
-.hero-area .block h1 {
-  font-size: 90px;
-  color: #fff;
-  text-transform: capitalize;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
 
 @media (max-width: 480px) {
   .hero-area .block h1 {

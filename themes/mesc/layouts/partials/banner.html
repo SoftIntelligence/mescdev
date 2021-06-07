@@ -1,8 +1,4 @@
-{{ $data := index site.Data site.Language.Lang }}
 
-{{ if $data.banner.banner.enable }}
-{{ with $data.banner.banner }}
-{{"<!-- Welcome Slider-->" | safeHTML}}
 <section class="hero-area" style="overflow: hidden;">
 	<!-- this image is for trigger this section fallback background image -->
 	<div id="page">
@@ -16,7 +12,7 @@
 		<h1>Myanmar Enterprise Solutions</h1>
 		<p>Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their accounting and corporate financial planning needs</p>
 	
-		<a href="#about" class="btn btn-transparent page-scroll" style="z-index: 999;">Explore Us</a>
+		<a href="#about" class="btn btn-transparent page-scroll" style="z-index: 999">Explore Us</a>
 
 
 	</div></li>
@@ -31,7 +27,7 @@
 		<p>Delivering True Business Outcomes
 </p>
 	
-		<a href="#contact" class="btn btn-transparent page-scroll" style="z-index: 999;">Contact Us</a>
+		<a href="#contact" class="btn btn-transparent page-scroll" style="z-index: 999" >Contact Us</a>
 
 
 	</div>
@@ -46,7 +42,7 @@
 		<h1>Myanmar Enterprise Solutions</h1>
 		<p>Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their accounting and corporate financial planning needs</p>
 	
-		<a href="#news" class="btn btn-transparent page-scroll" style="z-index: 999;">See Uptodate News</a>
+		<a href="#news" class="btn btn-transparent page-scroll" style="z-index: 999" >See Uptodate News</a>
 
 
 	</div></li>
@@ -58,7 +54,3 @@
 
 	
 </section>
-{{"<!-- /Welcome Slider-->" | safeHTML}}
-
-{{end}}
-{{end}}
