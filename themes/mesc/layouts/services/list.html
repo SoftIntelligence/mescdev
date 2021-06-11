@@ -1,132 +1,681 @@
 {{ define "main" }}
-
+{{ partial "navigation.html" . }}
 
 
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-.canvas{
-  padding-top: 30vh;  
-  width: 500px;
-  position: relative;
-  margin: auto;
 
-
-}
-
-.inner{
-  width: 155px;
-  height: 155px;
-  background-color: #A9A9A9;
-  justify-content: center;
-  text-align: center;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.comb{
-  width: 75px;
-  height: 75px;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 165px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.comb:nth-of-type(2n){
-  top: 120px;
-}
-.inner:hover{
-  background-color: #FF7F50;
-}
-.lbl{
-  position: absolute;
-  width: 400px;
-  height: auto;
-  font-size: 40px;
-  color: white;
-  left: 5%;
-  top: 25%;
-}
-.sum{
-  position: absolute;
-  width: 400px;
-  height: auto;
-  font-size: 18px;
-  color: white;
-  left: 5%;
-  top: 35%;
-  display: none;
-}
-.lbl2{
-  
-  position: absolute;
-  width: 100px;
-  height: 10px;
-  font-size: 15px;
-  text-align: center;
-  color: white;
-margin-right: 50%;
-margin-left: 40%;
-margin-top: 50%;
-  display: block;
- 
-  
-}
-.contact{
-  position: absolute;
-  top:25%;
-  left: 70%;
-  width: 80%;
-  height: 400px;
-  color: #FF7F50;
-
-
-}
 .bg{
    background-image: url(/Taxation.jpg);
-    height: 120vh; 
-
+    
+    
   /* Center and scale the image nicely */
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-</style>
-{{ partial "navigation.html" . }}
-<div class="bg w3-row-padding">
 
-<div class="w3-third">  
-<label id="lbl" class="lbl"> All Servies</label>  
-<p id="sum" class="sum"></p>
-</div>
+      :root {
+        --black: rgba(0, 0, 0, 1);
+        --venice-blue: rgba(6, 81, 141, 1);
+        --venice-blue-light: rgb(8, 97, 170);
+        --coral: rgba(255, 127, 80, 1);
+        --white: rgba(255,127,80 ,1 );
+        --background-polygon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA4IiBoZWlnaHQ9IjEyMSIgdmlld0JveD0iMCAwIDEwOCAxMjEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2QpIj4KPHBhdGggZD0iTTU0LjQ3MTYgOC41NTIxQzU1LjgzNTEgNy42MTY4MSA1Ny42MzM1IDcuNjE2ODEgNTguOTk2OSA4LjU1MjFMOTguNzMxMiAzNS44MDgzQzk5LjgxODYgMzYuNTU0MiAxMDAuNDY5IDM3Ljc4ODEgMTAwLjQ2OSAzOS4xMDY4Vjc4LjI5MDFDMTAwLjQ2OSA3OS42NjU0IDk5Ljc2MiA4MC45NDQzIDk4LjU5NzggODEuNjc2M0w1OC44NjM1IDEwNi42NjFDNTcuNTYyIDEwNy40OCA1NS45MDY1IDEwNy40OCA1NC42MDUgMTA2LjY2MUwxNC44NzA3IDgxLjY3NjNDMTMuNzA2NSA4MC45NDQzIDEzIDc5LjY2NTQgMTMgNzguMjkwMVYzOS4xMDY4QzEzIDM3Ljc4ODEgMTMuNjQ5OSAzNi41NTQyIDE0LjczNzMgMzUuODA4M0w1NC40NzE2IDguNTUyMVoiIGZpbGw9IiM1NzlCQ0MiIGZpbGwtb3BhY2l0eT0iMC42NSIvPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2QiIHg9IjAiIHk9IjAuODUwNjQ3IiB3aWR0aD0iMTA3LjQ2OSIgaGVpZ2h0PSIxMTkuNDI0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIi8+CjxmZU9mZnNldCBkeD0iLTMiIGR5PSIzIi8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjUiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMC41OTY0MjQgMCAwIDAgMCAwLjYzNzA5MiAwIDAgMCAwIDAuNzQxNjY3IDAgMCAwIDAuMzMgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvdyIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvdyIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K);
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        --font-size-xs: 12px;
+        --font-size-s: 14px;
+        --font-size-m: 18px;
+        --font-size-l: 36px;
+      }
+      .roboto-medium-black-48px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-l);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-light-black-14px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-s);
+        font-weight: 300;
+        font-style: normal;
+      }
+      .roboto-medium-white-18px {
+        color: var(--white);
+        font-family: var(--font-family);
+        font-size: var(--font-size-m);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-medium-venice-blue-12px {
+        color: var(--venice-blue);
+        font-family: var(--font-family);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        font-style: normal;
+      }
 
-<div class="canvas w3-third">
+      * {
+        box-sizing: border-box;
+      }
 
-<div class="comb"><div class="inner" onmouseover="sev1('Company Formation Services')"onmouseout="sev()"><label  class="lbl2">Company Formation Services</label>  </div>
-</div>
-<div class="comb"><div class="inner" onmouseover="sev1('Accounting & Bookkeeping Services')"onmouseout="sev()"><label  class="lbl2">Accounting & Bookkeeping Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('MIC Services')"onmouseout="sev()"><label  class="lbl2">MIC Service</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Payroll Services')"onmouseout="sev()"><label  class="lbl2">Payroll Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Financing Services')"onmouseout="sev()"><label  class="lbl2">Financing Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Business Proposal Service')"onmouseout="sev()"><label  class="lbl2">Business Proposal Service</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Taxation Service')"onmouseout="sev()"><label  class="lbl2">Taxation Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Corporate Training Services')"onmouseout="sev()"><label  class="lbl2">Corporate Training Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Accounting Setup')"onmouseout="sev()"><label  class="lbl2">Accounting Setup</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Internal Audit Services')"onmouseout="sev()"><label  class="lbl2">Internal Audit Services</label></div></div>
-<div class="comb"><div class="inner" onmouseover="sev1('Investment Deal Services')"onmouseout="sev()"><label  class="lbl2">Investment Deal Services</label></div></div>
-</div>
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 180px;
+     
+      }
+      @media screen and (max-width: 600px) {
+        .desktop-2 {
+          flex-direction: column;
+        }
+        .desktop-2 .group-16,
+        .group-18 {
+          margin: 10px 0 !important;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .desktop-2 {
+          flex-direction: column;
+          align-items: center !important;
+        }
+        .desktop-2 .group-16,
+        .group-18 {
+          margin: 10px 0 !important;
+        }
+      }
+      @media only screen and (max-width: 992px) {
+        .desktop-2 {
+          flex-direction: column;
+          align-items: center !important;
+        }
+        .desktop-2 .group-16,
+        .group-18 {
+          margin: 10px 0 !important;
+        }
+      }
+      .desktop-2 {
+        align-items: flex-start;
+        background-color: var(--white);
+        display: flex;
+        height: auto;
+        padding: 0 20px;
+        width: auto;
+      }
+      .desktop-2 .accounting-setup {
+        height: 29px;
+        letter-spacing: 0.12px;
+        min-height: 29px;
+        min-width: 93px;
 
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .contact-us {
+        letter-spacing: 0.48px;
+        min-height: 56px;
+      }
+      .desktop-2 .financing-service {
+        height: 29px;
+        letter-spacing: 0.12px;
+        min-height: 29px;
+        min-width: 93px;
 
-</div>
-<div class="contact w3-third">
-  
-   
-      <h2 style="color: #FF7F50; font-weight: 700;">Contact Us</h2>
-      <div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" style="background-color:#808080; margin-top: 20px; padding: 10px; ">
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .flex-col {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        min-height: 57px;
+        width: 14px;
+      }
+      .desktop-2 .flex-col-1 {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin-left: 7px;
+        min-height: 59px;
+        width: 191px;
+      }
+      .desktop-2 .group-15 {
+        max-width: 521px;
+      }
+      .desktop-2 .group-16,
+      .group-18 {
+        margin-left: 106px;
+        margin-top: 150px;
+      }
+      .desktop-2 .group-17 {
+        align-items: center;
+        display: flex;
+        height: 59px;
+        margin-top: 26px;
+        min-width: 216px;
+      }
+      .desktop-2 .group-19 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 0;
+        min-width: 93px;
+        position: absolute;
+        top: 0;
+      }
+      .desktop-2 .group-20 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 92px;
+        min-width: 93px;
+        position: absolute;
+        top: 0;
+      }
+      .desktop-2 .group-21 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 186px;
+        min-width: 93px;
+        position: absolute;
+        top: 0;
+      }
+      .desktop-2 .group-22 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 49px;
+        min-width: 93px;
+        position: absolute;
+        top: 76px;
+      }
+      .desktop-2 .group-23 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 140px;
+        min-width: 93px;
+        position: absolute;
+        top: 76px;
+      }
+      .desktop-2 .group-24 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 0;
+        min-width: 93px;
+        position: absolute;
+        top: 151px;
+      }
+      .desktop-2 .group-25 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 91px;
+        min-width: 93px;
+        position: absolute;
+        top: 157px;
+      }
+      .desktop-2 .group-26 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 183px;
+        min-width: 93px;
+        position: absolute;
+        top: 157px;
+      }
+      .desktop-2 .group-27 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 43px;
+        min-width: 93px;
+        position: absolute;
+        top: 231px;
+      }
+      .desktop-2 .group-28 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 140px;
+        min-width: 93px;
+        position: absolute;
+        top: 236px;
+      }
+      .desktop-2 .group-29 {
+        align-items: flex-start;
+        display: flex;
+        height: 101px;
+        left: 184px;
+        min-width: 93px;
+        position: absolute;
+        top: 314px;
+      }
+      .desktop-2 .mic-service {
+        height: 29px;
+        letter-spacing: 0.12px;
+        min-height: 29px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .overlap-group {
+        height: 415px;
+        position: relative;
+        width: 279px;
+      }
+      .desktop-2 .overlap-group div {
+        cursor: pointer;
+        transition: transform 250ms;
+      }
+      .desktop-2 .overlap-group div:hover {
+        transform: translateY(-1px);
+      }
+      .desktop-2 .overlap-group div:hover div {
+        color: var(--venice-blue-light);
+      }
+      .desktop-2 .overlap-group-1 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 43.5px 3.5px;
+      }
+      .desktop-2 .overlap-group1 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 35.5px 3.5px;
+      }
+      .desktop-2 .overlap-group10 {
+        align-items: center;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -12px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 0 2.5px;
+      }
+      .desktop-2 .overlap-group11 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -13px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 42.5px 1.5px;
+      }
+      .desktop-2 .overlap-group3 {
+        align-items: flex-end;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 37.5px 3.5px;
+      }
+      .desktop-2 .overlap-group4 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 42.5px 3.5px;
+      }
+      .desktop-2 .overlap-group5 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -12px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 36.5px 2.5px;
+      }
+      .desktop-2 .overlap-group7 {
+        align-items: flex-end;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 29.5px 3.5px;
+      }
+      .desktop-2 .overlap-group8 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -11px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 36.5px 3.5px;
+      }
+      .desktop-2 .overlap-group9 {
+        align-items: flex-start;
+        background-image: var(--background-polygon);
+        background-size: 100% 100%;
+        display: flex;
+        height: 120px;
+        justify-content: flex-end;
+        margin-left: -12px;
+        margin-top: -6.5px;
+        min-width: 108px;
+        padding: 34.5px 2.5px;
+      }
+      .desktop-2 .payroll-service {
+        height: 29px;
+        letter-spacing: 0.12px;
+        min-height: 29px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .phone {
+        height: 16px;
+        letter-spacing: 0.14px;
+        min-height: 16px;
+      }
+      .desktop-2 .taxation-service {
+        height: 29px;
+        letter-spacing: 0.12px;
+        min-height: 29px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .text- {
+        height: 44px;
+        letter-spacing: 0.12px;
+        min-height: 44px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .text-1 {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-m);
+        font-weight: 500;
+        height: 400px;
+        text-indent: 2.5em;
+        letter-spacing: 0.18px;
+        text-align: justify;
+        max-width: 521px;
+      }
+      .desktop-2 .text-2 {
+        height: 42px;
+        letter-spacing: 0.12px;
+        min-height: 42px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .text-4 {
+        height: 43px;
+        letter-spacing: 0.12px;
+        min-height: 43px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .text-5 {
+        height: 59px;
+        letter-spacing: 0.12px;
+        min-height: 59px;
+        min-width: 93px;
+
+        text-align: center;
+        width: 93px;
+      }
+      .desktop-2 .text-8 {
+        height: 16px;
+        letter-spacing: 0.14px;
+        margin-top: 4px;
+        min-height: 16px;
+      }
+      .desktop-2 .text-9 {
+        height: 16px;
+        letter-spacing: 0.14px;
+        margin-top: 7px;
+        min-height: 16px;
+      }
+      .desktop-2 .title {
+        letter-spacing: 0.48px;
+        margin-left: 2px;
+        margin-bottom: 18px;
+        height: 120px;
+      }
+      .desktop-2 .vector {
+        height: 15px;
+        margin-top: 7px;
+
+        width: 12px;
+      }
+      .desktop-2 .vector-1 {
+        height: 17px;
+        margin-left: 2px;
+        margin-top: 10px;
+
+        width: 12px;
+      }
+      .desktop-2 .vector-2 {
+        height: 16px;
+
+        width: 16px;
+      }
+    </style>
+<section class="bg">
+<div class="container">
+      <div class="desktop-2 screen">
+        <div class="group-15">
+          <h1 class="title valign-text-middle roboto-medium-black-48px">
+            All Services
+          </h1>
+          <div class="text-1 valign-text-middle description">
+            &#39;Myanmar Enterprise Solutions is the Myanmar’s leading expert in
+            company formations. A company or entity can be registered in
+            accordance with the Myanmar Companies Law (2017) and the Special
+            Company Act (1950). &#39;;
+          </div>
+        </div>
+        <div class="group-16">
+          <div class="overlap-group">
+            <div class="group-19" id="1">
+              <div class="overlap-group1">
+                <div
+                  class="
+                    text-2
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Company Formation Service
+                </div>
+              </div>
+            </div>
+            <div class="group-25" id="3">
+              <div class="overlap-group-1">
+                <div
+                  class="
+                    mic-service
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  MIC<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-29" id="6">
+              <div class="overlap-group3">
+                <div
+                  class="
+                    text-
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Business<br />Proposal<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-20" id="4">
+              <div class="overlap-group4">
+                <div
+                  class="
+                    payroll-service
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Payroll<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-28" id="8">
+              <div class="overlap-group5">
+                <div
+                  class="
+                    text-4
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Corporate Traning<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-27" id="5">
+              <div class="overlap-group-1">
+                <div
+                  class="
+                    financing-service
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Financing<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-26" id="2">
+              <div class="overlap-group7">
+                <div
+                  class="
+                    text-5
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Accounting<br />&amp;<br />Bookkeeping<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-24" id="11">
+              <div class="overlap-group8">
+                <div
+                  class="
+                    text-
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Investment<br />Deal<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-23" id="10">
+              <div class="overlap-group9">
+                <div
+                  class="
+                    text-
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Internal<br />Audit<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-22" id="7">
+              <div class="overlap-group10">
+                <div
+                  class="
+                    taxation-service
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Taxation<br />Service
+                </div>
+              </div>
+            </div>
+            <div class="group-21" id="9">
+              <div class="overlap-group11">
+                <div
+                  class="
+                    accounting-setup
+                    valign-text-middle
+                    roboto-medium-venice-blue-12px
+                  "
+                >
+                  Accounting<br />Setup
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     <div class="col-lg-5 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" style="background-color:#808080; margin-top: 20px; margin-left: 10px; padding: 10px; ">
+      <h3>Contact Us</h3>
         <form id="contact-form" class="form-meghna" method="post" action="#" role="form">
-          <div class="form-group" >
+          <div class="form-group">
             <div style="display: inline-block;">
             <input type="text" placeholder="Firstname " class="form-control" name="first name" id="fname">
             </div>
@@ -149,78 +698,86 @@ margin-top: 50%;
             <input type="text" placeholder="subject" class="form-control" name="subject" id="subject">
           </div>
           </div>
-          <div class="form-group">
+             
             <div >
-            <textarea rows="6" placeholder="message " class="form-control" name="message" id="message"></textarea>
+               <div style="display: block; padding-left: 8%; padding-right:  8%; ">
+            <textarea rows="6" cols="4" placeholder="message " class="form-control" name="message" id="message"></textarea>
           </div>
           </div>
+        
           <div id="cf-submit">
-            <button type="submit" id="contact-submit" class="btn btn-transparent btn-block"
-             style="background-color:  #A0522D"
-              value="Submit">Submit</button>
+            <button type="submit" id="contact-submit" class="btn btn-transparent btn-block" style="background-color:  coral" value="Submit">Submit</button>
           </div>
         </form>
       </div>
-</div>
-<script type="text/javascript">
-  function sev1(dv){
-    document.getElementById("lbl").innerHTML = dv;
-  
-    switch(dv) {
-  case 'Company Formation Services':
-    document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Myanmar Enterprise Solutions is the Myanmar’s leading expert in company formations. A company or entity can be registered in accordance with the Myanmar Companies Law (2017) and the Special Company Act (1950). ';
-    break;
-  case 'Accounting & Bookkeeping Services':
-    document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.  ';
-    break;
-   case 'MIC Services':
-   document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML ='The Myanmar Investment Commission (MIC) is a government-appointed body under the Ministry of National Planning and Economic Development that appraises Foreign Investment in Myanmar, Local Myanmar Investment and Joint Venture (JV) Investment Proposals of Myanmar and foreign investor.';
-    break;
-    case 'Payroll Services':
-  document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Payroll is arguably the largest expense for businesses, and running it can be a daunting task. Even with a small number of employees, calculating and processing salaries can be a tedious and time consuming process and errors can result in both unhappy employees and fines. To ease the burden, many small businesses are turning to MES payroll services.';
-    break; 
-     case 'Financing Services':
-  document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Our tailored lending service gives you customized borrowing options that can open up new opportunities for your business, help protect your wealth and expand your business. We tailored made strategies involves normal lending in the form of bank loans (Local, Foreign), bridging loan from Finance Companies and Micro Finance. However, as companies’ fund requirements increase, credits grow in size and become more complex. As per our portfolio We deal with all kinds of financing arrangements. ';
-    break;
-     case 'Business Proposal Service':
-   document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML ='A business proposal can make or break your opportunity. A strong business proposal is a vital opportunity to win new business. Crafting a strong business proposal requires a lot of time, effort, planning, commitment, and a set of skills including research, analysis, financial and writing.'; 
-    break;
-     case 'Taxation Service':
- document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Sound management of a business must include efficient management of the company’s tax liabilities, compliance with the tax regulation, avoiding tax reporting pitfalls and possible penalties. Albert Einstein said that "The hardest thing in the world to understand is the income tax." Tax is an unavoidable expense of business. We can assist our clients in mitigating their business tax risks in Myanmar. Trust our local team of accounting and taxation experts to guide and support your business operations through the calculation, preparation and filing of companies tax declarations, maintaining the company accounts and with the tax payment service.';
-    break;
-     case 'Corporate Training Services':
-   document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML ='At Myanmar Learning Lab Institute, we want you to get the most out of your employees. Our Corporate Training, also known as Corporate Education or more recently Workplace Learning, is a system of activities designed to develop talent and manage the next generation of leaders. The best corporate training programs can build loyalty in a company, while boosting the performance of its managers and improving the shareholder wealth. '; 
-    break;
-     case 'Accounting Setup':
- document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Behind the every good business is a Great Finance and Account Team. As we know that Accounting is the language of Business that is even complicated and confused, but if you want to be rich, success, it could be the most important matters.';
-    break;
-     case 'Internal Audit Services':
-  document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.'; 
-    break;
-     case 'Investment Deal Services':
-   document.getElementById("sum").style.display = "block";
-     document.getElementById("sum").innerHTML = 'Preparing monthly, quarterly and annual accounting reportsPrepare accounts in accordance with Myanmar Financial Reporting StandardsManaging accounting entries, compiling general ledger report, trial balance, profit and loss statement, balance sheet and cash flow statement for statutory reporting and financial analysis ..etc ';
-    break;
-      
-  default:
- 
-}
-  }
-   function sev(){
-    document.getElementById("lbl").innerHTML = "All Services";
-    document.getElementById("sum").style.display = "none";
-  }
+        </div>
 
-</script>
+        </div>
+        </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      const services = [
+        [
+          "Company Formation Services",
+          "Myanmar Enterprise Solutions is the Myanmar’s leading expert in company formations. A company or entity can be registered in accordance with the Myanmar Companies Law (2017) and the Special Company Act (1950). ",
+        ],
+        [
+          "Accounting & Bookkeeping Services",
+          "We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.  ",
+        ],
+        [
+        'MIC Services',
+        'The Myanmar Investment Commission (MIC) is a government-appointed body under the Ministry of National Planning and Economic Development that appraises Foreign Investment in Myanmar, Local Myanmar Investment and Joint Venture (JV) Investment Proposals of Myanmar and foreign investor.'
+        ],
+        [
+        'Payroll Services',
+        'Payroll is arguably the largest expense for businesses, and running it can be a daunting task. Even with a small number of employees, calculating and processing salaries can be a tedious and time consuming process and errors can result in both unhappy employees and fines. To ease the burden, many small businesses are turning to MES payroll services.'
+        ],
+        [
+        'Financing Services',
+        'Our tailored lending service gives you customized borrowing options that can open up new opportunities for your business, help protect your wealth and expand your business. We tailored made strategies involves normal lending in the form of bank loans (Local, Foreign), bridging loan from Finance Companies and Micro Finance. However, as companies’ fund requirements increase, credits grow in size and become more complex. As per our portfolio We deal with all kinds of financing arrangements. '
+        ],
+        [
+        'Business Proposal Service',
+        'A business proposal can make or break your opportunity. A strong business proposal is a vital opportunity to win new business. Crafting a strong business proposal requires a lot of time, effort, planning, commitment, and a set of skills including research, analysis, financial and writing.'
+        ],
+        [
+        'Taxation Service',
+        'Sound management of a business must include efficient management of the company’s tax liabilities, compliance with the tax regulation, avoiding tax reporting pitfalls and possible penalties. Albert Einstein said that "The hardest thing in the world to understand is the income tax." Tax is an unavoidable expense of business. We can assist our clients in mitigating their business tax risks in Myanmar. Trust our local team of accounting and taxation experts to guide and support your business operations through the calculation, preparation and filing of companies tax declarations, maintaining the company accounts and with the tax payment service.'
+        ],
+        [
+        'Corporate Training Services',
+        'At Myanmar Learning Lab Institute, we want you to get the most out of your employees. Our Corporate Training, also known as Corporate Education or more recently Workplace Learning, is a system of activities designed to develop talent and manage the next generation of leaders. The best corporate training programs can build loyalty in a company, while boosting the performance of its managers and improving the shareholder wealth. '
+        ],
+        [
+        'Accounting Setup',
+        'Behind the every good business is a Great Finance and Account Team. As we know that Accounting is the language of Business that is even complicated and confused, but if you want to be rich, success, it could be the most important matters.'
+        ],
+        [
+        'Internal Audit Services',
+        'We know that time is money for businesses – and you’ve probably got many other priorities you’d rather be doing than accounting function. Like, making your business a success. We provide detailed and bespoke accounting solutions to meet our clients’ needs and can help businesses of all sizes, in Myanmar. Our full range of accountancy services ensure your business can focus on what it does best, knowing our team is fully managing your finances.'
+        ],
+        [
+        'Investment Deal Services',
+        'Preparing monthly, quarterly and annual accounting reports Prepare accounts in accordance with Myanmar Financial Reporting Standards Managing accounting entries, compiling general ledger report, trial balance, profit and loss statement, balance sheet and cash flow statement for statutory reporting and financial analysis ..etc '
+        ]
+      ];
+      const render = (e) => {
+        let id = $(e).attr("id");
+        if (id) {
+          const service = services[id-1];
+          const service_title = service[0];
+          const service_description = service[1];
+          $('.title').text(service_title);
+          $('.description').text(service_description);
 
-{{ end }}
+        }
+      }
+      $(".desktop-2 .overlap-group div").hover(function () {
+        render(this);
+      }).click(function () {
+        render(this)
+      });
+    </script>
+
+    {{ end }}

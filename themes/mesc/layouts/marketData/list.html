@@ -43,7 +43,16 @@ h2 a {
   text-align: left;
   color: #185875;
 }
-
+.bg{
+  background-image: url(/exchangerate.webp);
+    
+    
+  /* Center and scale the image nicely */
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .container td {
     font-weight: normal;
     font-size: 1em;
@@ -149,7 +158,7 @@ h2 a {
   margin: 5px;
 }
 </style>
-
+<section class="bg">
 <h1></h1> 
     <!-- table for showing data -->
     <br>
@@ -157,47 +166,20 @@ h2 a {
     <br>
     <div class="warclock ">
     <h4 style="font-size: 60px;">Exchange Rate</h4>  
-    <label id="USD" style="font-size:6vw; color: #FF8C00" class="lab"></label>
+    <label id="USD" style="font-size:4vw; color: #FF8C00" class="lab"></label>
     <label id="EURO" style="font-size:4vw; color: #FF0000"  class="lab"></label>
     <label id="PLB"style="font-size:4vw; color: #32CD32" class="lab"></label>
     </div>
     <div class="tbl"> 
-      <table class="table table-dark table-striped">
-<thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-    <table id="employees" class="container"></table> 
-    </div>
+      
 
+    <table id="employees" class="table table-dark container"></table> 
+    </div>
+</section>
 
 <script type="text/javascript">
- 
-const rate = "https://forex.cbm.gov.mm/api/latest";	
+var usd = 0; 
+const rate = "https://openexchangerates.org/api/latest.json?app_id=ee8187b55c2b4d74b204cc39d5269293";	
 getapi(rate);
 async function getapi(url){
 const response = await fetch(url); 
@@ -212,9 +194,9 @@ const response = await fetch(url);
 	
 }
 function showRate(exrate){
-	document.getElementById("USD").innerHTML ="USD : " + exrate.rates.USD;
-  document.getElementById("EURO").innerHTML ="EURO : " + exrate.rates.EUR;
-  document.getElementById("PLB").innerHTML ="THB : " + exrate.rates.THB;
+  usd = parseFloat(exrate.rates.MMK).toFixed(2);
+	document.getElementById("USD").innerHTML ="1 USD  =  " + usd + "MMK";
+  
   let tab = 
     `<tr> 
     <th>Currency</th> 
@@ -223,17 +205,17 @@ function showRate(exrate){
     </tr>`; 
   var rt = exrate.rates;
   for (var key in rt) {
-  console.log(key , rt[key]); 
+   
+  var cu = rt[key];
+  var er  = parseFloat(usd * (1/cu)).toFixed(2);
   tab += `<tr> 
   <td>${key} <img class="currency-flag-sm" src="/flags/${key.toLowerCase()}.png" /> </td> 
-  <td>  ${rt[key]} mmk </td> 
+  <td>  ${er} MMK </td> 
 </tr>`; 
 }
 document.getElementById("employees").innerHTML = tab; 
 }
 </script>
+
 {{ partial "contact.html" . }}
-
-
-
 {{ end }}

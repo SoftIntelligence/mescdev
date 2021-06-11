@@ -1,250 +1,449 @@
-<style type="text/css">
-*---services block start----*/
+<style>
+        :root {
+        --black: rgba(0, 0, 0, 1);
+        --venice-blue: rgba(6, 81, 141, 1);
+        --coral: rgba(255, 127, 80, 1);
+        --white: rgba(255, 255, 255, 1);
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        --font-size-xs: 12px;
+        --font-size-s: 14px;
+        --font-size-m: 18px;
+        --font-size-l: 36px;
+        --font-size-xl: 48px;
+      }
+      .roboto-medium-black-48px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-xl);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-light-black-14px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-s);
+        font-weight: 300;
+        font-style: normal;
+      }
+      .roboto-medium-white-18px {
+        color: var(--white);
+        font-family: var(--font-family);
+        font-size: var(--font-size-m);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-medium-venice-blue-12px {
+        color: var(--venice-blue);
+        font-family: var(--font-family);
+        font-size: var(--font-size-xs);
+        font-weight: 500;
+        font-style: normal;
+      }
 
-.services-shadow {
-	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
-	-webkit-filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.4));
-}
+      * {
+        box-sizing: border-box;
+      }
+    
+      .container {
+        width: auto;
+        overflow-x: hidden;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .box {
+        background-color: #364546;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 31px;
+      }
+      .heading span * {
+        font-size: 36px;
+        font-weight: 800;
+      }
+      .heading span span:first-child {
+        color: var(--white);
+      }
+      .heading span span:last-child {
+        color: var(--coral);
+      }
+      .sep {
+        margin-top: 16px;
+        align-items: flex-start;
+        display: flex;
+        justify-content: flex-end;
+        min-width: 308px;
+      }
+      .line-1 {
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 2px;
+        width: 308px;
+        border-top: 1px solid rgba(124, 124, 124, 0.65);
+      }
+      .overlap-group {
+        height: 5px;
+        position: relative;
+        width: 308px;
+      }
+      .rectangle-2 {
+        background-color: #57cbcc;
+        height: 5px;
+        left: 129px;
 
-.services {
-	background: #364546;
-	padding: 41px 0 73px 0;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 88.5%, 50% 100%, 0 88.5%);
-	clip-path: polygon(0 0, 100% 0, 100% 88.5%, 50% 100%, 0 88.5%);
-	position: relative;
-}
+        position: absolute;
+        top: 0;
+        width: 50px;
+      }
+      .roboto-medium-white-18px {
+        color: var(--white);
+        font-weight: 500;
+        font-style: normal;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 600px) {
+        .service-group {
+          margin-top: 32px !important;
+          flex-direction: column !important;
+        }
+        .flex-col {
+          margin-top: 15px;
+          margin-left: 0px !important;
+        }
+        .polygon {
+          height: 70px !important;
+        }
+      }
+      .service-group {
+        margin-top: 64px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .accounting-setup {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 153px;
+      }
+      .financing-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 148px;
+      }
+      .flex-col {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin-left: 133px;
+        min-height: 165px;
+        width: max-content;
+      }
+      .flex-col-1 {
+        align-items: flex-start;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        min-height: 201px;
+        width: max-content;
+      }
+      .group- {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 225px;
+      }
+      .group-12 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 194px;
+      }
+      .group-13 {
+        align-items: center;
+        display: flex;
+        min-width: 249px;
+      }
+      .group-2 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 116px;
+      }
+      .group-3 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 163px;
+      }
+      .group-4 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 153px;
+      }
+      .group-5 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 168px;
+      }
+      .group-7 {
+        align-items: center;
+        display: flex;
+        min-width: 304px;
+      }
+      .group-8 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 139px;
+      }
+      .group-9 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 236px;
+      }
+      .mic-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 101px;
+      }
+      .payroll-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 124px;
+      }
+      .rectangle-3 {
+        background-color: var(--coral);
+        height: 10px;
+        margin-bottom: 3px;
 
-.services-in {}
-
-.services-in h2 {
-	text-align: center;
-	padding: 0 0 26px 0;
-	color: #ffffff;
-}
-
-.plus {
-	width: 98%;
-	margin: 0 auto;
-	padding: 0 0 24px 221px;
-}
-
-.plus-left {}
-
-.plus-left > ul {}
-
-.plus-left > ul > li {
-	padding: 0 0 8px 0;
-}
-
-.plus-left h3 {
-	color: #139dbf;
-	font-size: 33px;
-	line-height: 35px;
-	padding: 0 0 0 0;
-}
-
-.plus-right {
-	padding: 0 0 0 19px;
-}
-
-.plus-right > ul {}
-
-.plus-right > ul > li {
-	padding: 0 0 1.7px 0;
-}
-
-.plus-right > ul > li > a {
-	letter-spacing: 0px;
-}
-
-.plus-right h3 {
-	color: #8c6aa7;
-	margin: 0;
-	padding: 0 0 1px 0;
-}
-
-.plus-in {
-	padding: 0 0 0 3px;
-}
-
-.plus-left-in {
-	padding: 4px 0 0 0;
-	width: 22px;
-}
-
-.plus-left-in figure {}
-
-.plus-left-in figure em {
-	background: coral;
-	width: 12px;
-	height: 16px;
-	display: inline-block;
-}
-
-.plus-right figure em {
-	background: #8c6aa7;
-}
-
-.plus-left-in img {}
-
-.plus-right-in {}
-
-.plus-right-in a {
-	color: #fff;
-	font-size: 23px;
-	line-height: 25px;
-	font-weight: 400;
-	margin: 0;
-	display: inline-block;
-}
-
-.cover {
-	padding: 0 0 0 24px;
-}
-
-.cover p {}
-
-.cover p > a {
-	font-size: 20px;
-	line-height: 23px;
-	color: #fff;
-	font-weight: 400;
-	display: inline-block;
-	letter-spacing: -0.2px;
-}
-
-	
-
-
-
-
-</style>
+        width: 8px;
+      }
+      .taxation-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 138px;
+      }
+      .text- {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 210px;
+      }
+      .text-1 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 179px;
+      }
+      .text-2 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 234px;
+      }
+      .text-3 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 289px;
+      }
+      .text-4 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 221px;
+      }
+      .polygon {
+        overflow: hidden;
+        margin-top: -2px;
+        width: auto;
+        min-height: 70px;
+        max-height: 140px;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline !important;
+      }
+    </style>
 
 
 
 
 
-<div id="service" class="services-shadow">         
-           <div class="services" id="target2">
-            <div class="container">
-               <div class="services-in">
-               <div class="title text-center wow fadeIn" data-wow-duration="500ms">
-					<h2>Our<span style="color: coral">
-						Services</span></h2>
-					<div class="border-meghna"></div>
-				</div>
-                 <br></br>
-                 <br></br>
-                 <br></br>
-                  <div class="plus clearfix d-flex flex-wrap">
-                     <div class="plus-left col-sm-12 col-md-6 col-lg-6">
-                                                
-                        <ul>
-                                                           <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Company Formation Service</a></div>
-                                  </div>
-                               </li>
-                                                         <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">MIC service</a></div>
-                                  </div>
-                               </li>
-                                                         <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Financing Service</a></div>
-                                  </div>
-                               </li>
-                                                         <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Taxation Service</a></div>
-                                  </div>
-                               </li>
-                                                         <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Accounting Setup</a></div>
-                                  </div>
-                               </li>
-                                                         <li>
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Investment Deal Services</a></div>
-                                  </div>
-                               </li>
-                                 
-                                                  </ul>
-                     </div>
-                     <div class="plus-left  col-sm-12 col-md-6 col-lg-6">
-                       
-                        <ul>                           
-                                                          <li class="">
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/life-insurance/">Accounting & Bookkeeping Service</a></div>
-
-                                  </div>
-                               </li>
-                                                           <li class="">
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/critical-illness-insurance/">Payroll Service </a></div>
-
-                                  </div>
-                               </li>
-                                                           <li class="">
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Business Proposal Service</a></div>
-
-                                  </div>
-                               </li>
-                                                           <li class="">
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/">Corporate Training Service</a></div>
-
-                                  </div>
-                               </li>
-                                                           <li class="">
-                                  <div class="plus-in clearfix d-flex flex-wrap">
-                                     <div class="plus-left-in">
-                                        <figure> <em>&nbsp;</em></figure>
-                                     </div>
-                                     <div class="plus-right-in"><a href="/buildings-contents-insurance/">Internal Audit Service</a></div>
-
-                                  </div>
-                               </li>
-                                                 
-                                                    </ul>
-                     </div>
-                  </div>
-                 
-               </div>
+<div class="container">
+        <div class="box">
+          <div class="heading">
+            <span>
+              <span>Our </span>
+              <span>Services</span>
+            </span>
+          </div>
+          <div class="sep">
+            <div class="overlap-group">
+              <div class="line-1"></div>
+              <div class="rectangle-2"></div>
             </div>
-         </div>
-         </div>
+          </div>
+          <div class="service-group">
+            <div class="flex-col-1">
+              <div class="group-13">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-2 valign-text-middle roboto-medium-white-18px"
+                >
+                  Company Formation Service
+                </a>
+              </div>
+              <div class="group-2">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="mic-service valign-text-middle roboto-medium-white-18px"
+                >
+                  MIC Service
+                </a>
+              </div>
+              <div class="group-3">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    financing-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Financing Service
+                </a>
+              </div>
+              <div class="group-4">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    taxation-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Taxation Service
+                </a>
+              </div>
+              <div class="group-5">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    accounting-setup
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Accounting&nbsp;&nbsp;Setup
+                </a>
+              </div>
+              <div class="group-">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text- valign-text-middle roboto-medium-white-18px"
+                >
+                  Investment Deal Services
+                </a>
+              </div>
+            </div>
+            <div class="flex-col">
+              <div class="group-7">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-3 valign-text-middle roboto-medium-white-18px"
+                >
+                  Accounting &amp; Bookkeeping Service
+                </a>
+              </div>
+              <div class="group-8">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    payroll-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Payroll Service
+                </a>
+              </div>
+              <div class="group-9">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-4 valign-text-middle roboto-medium-white-18px"
+                >
+                  Business Proposal Service
+                </a>
+              </div>
+              <div class="group-">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text- valign-text-middle roboto-medium-white-18px"
+                >
+                  Corporate Training Service
+                </a>
+              </div>
+              <div class="group-12">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-1 valign-text-middle roboto-medium-white-18px"
+                >
+                  Internal Audit Service
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="polygon"
+          src="data:image/svg+xml;base64,PHN2ZwogICAgICAgIGNsYXNzPSJwb2x5Z29uIgogICAgICAgIHZpZXdCb3g9IjAgMCAxNDQwIDcwIgogICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICA+CiAgICAgICAgPHBhdGggZD0iTTcxOC41NDYgNzBMMTUwMSAwLjI1SC02My45MDhMNzE4LjU0NiA3MFoiIGZpbGw9IiMzNjQ1NDYiIC8+CiAgICAgIDwvc3ZnPg=="
+        />
+      </div>
