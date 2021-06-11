@@ -52,9 +52,9 @@ img {vertical-align: middle;}
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 4.5s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 4.5s;
 }
 
 @-webkit-keyframes fade {
@@ -126,13 +126,13 @@ function show(data) {
   // Loop to access all rows 
   for (let r of data.records) { 
     sld += `
-    <div class="mySlides fade video-button "  onclick="location.href='${r.action}'">
+    <div class="mySlides fade video-button "  onclick="">
 
-  <img class="pic" src="${r.url}" style="width:100%">
+  <img class="pic" src="/banner1.jpg" style="width:100%">
   <div class="text">
   <h1>Myanmar Enterprise Solutions</h1>
 		<p>Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their accounting and corporate financial planning needs</p>
-  <a href="#news" class="btn btn-primary" style="z-index: 999" >See Uptodate News</a></div>
+  <a href="" class="btn btn-primary" style="z-index: 999" >See Uptodate News</a></div>
   
 </div>
 `; 
@@ -163,6 +163,6 @@ function showSlides() {
   
   slides[slideIndex-1].style.display = "block";  
  
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 </script>

@@ -2,6 +2,25 @@
 
 
 {{ partial "navigation.html" . }}
+<div class="container">
+   
+ <section style="position: fixed; z-index: 99; width: 100%; 	 display: block; text-align: center;">
+<form action="/articles" style="width: 100%;"><input placeholder="search" class="form-control mb-2" type="text" name="search"></form>
+<label class="seeall" onclick="location.href='/allarticles'">See All</label>
+</section>
+<br>
+<br>
+<br>
+<section  class="section pt-0">
+<div  class="container">
+<div id="allarticle" class="row">
+
+</div>
+</div>	
+</section>
+ 
+<script type="text/javascript" src="/js/error.js"></script> 
+<script type="text/javascript" src="/js/allarticles.js"></script> 
 
 
 
