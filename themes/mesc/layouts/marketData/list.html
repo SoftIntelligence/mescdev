@@ -159,6 +159,7 @@ h2 a {
 }
 </style>
 <section class="bg">
+  
 <h1></h1> 
     <!-- table for showing data -->
     <br>
@@ -183,7 +184,9 @@ const rate = "https://openexchangerates.org/api/latest.json?app_id=ee8187b55c2b4
 getapi(rate);
 async function getapi(url){
 const response = await fetch(url); 
-  
+
+                    
+                    
   // Storing data in form of JSON 
   var exrate = await response.json(); 
   
@@ -195,6 +198,7 @@ const response = await fetch(url);
 }
 function showRate(exrate){
   usd = parseFloat(exrate.rates.MMK).toFixed(2);
+  usd = usd - 72.2;
 	document.getElementById("USD").innerHTML ="1 USD  =  " + usd + "MMK";
   
   let tab = 
