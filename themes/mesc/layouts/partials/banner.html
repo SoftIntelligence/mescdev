@@ -5,10 +5,15 @@ body {font-family: Verdana, sans-serif;}
 img {vertical-align: middle;}
 
 /* Slideshow container */
+@media (max-width: 480px) {
+  .slideshow-container {
+    margin: auto;
+  }
+}
 .slideshow-container {
   max-width: 100%;
   position: relative;
-  margin: auto;
+  margin: 140px auto 10px auto;
 }
 
 /* Caption text */
@@ -51,20 +56,35 @@ img {vertical-align: middle;}
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 4.5s;
   animation-name: fade;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
   animation-duration: 4.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
@@ -84,7 +104,7 @@ img {vertical-align: middle;}
 	<!-- this image is for trigger this section fallback background image -->
 
     
-<div id="slide" class="slideshow-container"></div>
+<div id="slide" class="slideshow-container rounded"></div>
 
 
 	

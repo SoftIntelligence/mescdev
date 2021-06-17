@@ -1,356 +1,486 @@
-
 <style type="text/css">
-	.header {
-  margin: 0;  
-	position: fixed;
-  background: rgba(113, 129, 131, 1);
-	width: 100%;
-  height: auto;
-	z-index: 999;
-	top: 1;
-	left: 0;
-	-webkit-transition: .25s ease-in-out;
-	-moz-transition: .25s ease-in-out;
-	-o-transition: .25s ease-in-out;
-	transition: .25s ease-in-out;
-  
-}
-.mbbar{
-  display: none;
-}
-.header-top {
-	padding: 0 0 0px 0;
-  margin: 0;
-}
-
-.header-in {}
-
-.header-logo {
-	margin: 0 auto;
-	text-align: center;
-	padding: 10px 0 10px 14px;
-	-webkit-transition: .25s ease-in-out;
-	-moz-transition: .25s ease-in-out;
-	-o-transition: .25s ease-in-out;
-	transition: .25s ease-in-out;
-	background: #ffffff;
-}
-
-
-.header-logo a {
-	text-align: center;
-	display: inline-block;
-}
-
-.header-logo a img {
-	width: 40px;
-	height: auto;
-	object-fit: cover;
-	-webkit-transition: .25s ease-in-out;
-	-moz-transition: .25s ease-in-out;
-	-o-transition: .25s ease-in-out;
-	transition: .25s ease-in-out;
-}
-
-
-
-.nav-shadow {
-   
-	position: relative;
-}
-
-nav {
-	/*box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.2);*/
-	
-	position: absolute;
-  top: 120px;
-  margin: 0;
-  width: 100%;
-
-	background: rgba(113, 129, 131, 1);
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
-	-moz-: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
-	-ms-:polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
-        -o-:polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
-
-	clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
-	padding: 23px 0 29px 0;
-
-}
-
-.nav-in {}
-
-
-
-nav ul li {
-	padding: 0 17px 33px;
-}
-
- ul li a {
-	
-	 float: none;
-  color: white;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  font-size: 13px;
-
-}
- ul li.active a{color:#000;}
-
-
-/*--sticky header--*/
-
-
-@media only screen and (max-width:867px){
-.header{
-  display: none;
-}
-.mbbar{
-  display: block;
-    margin: 0;  
-  position: fixed;
-  background: rgba(113, 129, 131, 1);
-  width: 100%;
-  height: auto;
-  z-index: 999;
-  top: 1;
-  left: 0;
-}
- h1{font-size: 20px;}
-  p{font-size: 11px;}
-  .newsbox{
-  display: flex;
-  width: 25%;
-  height: auto;
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  border-color: black;
-  border-width: 1px;
-  cursor: pointer;
-  margin: 5px;
-
-}
-.news{
-  margin-top: 40px;
-  display: block;
-}
-.thumb{
-  width: 100px;
-  height: 100px;
-  position: relative;
-  margin-top: 10;
-  box-shadow:  3px 3px 5px 6px #ccc;
-  object-fit: cover;
-  display: inline-block;
-
-}
-.info{
-  display: inline-block;
-  position: relative;
-  width: 60%;
-  height: auto;
-  margin-left: auto;
-  padding: 10px;
-
-}
-.title{
-    width: 100px;
-    height: 5px;
-    position: relative;
-    font-size: 15px;
-}
-label{
-   width: 100px;
-    height: 5px;
-    position: relative;
-  font-size: 1em;
-}
-}
-
-
-.dropdown {
-  float: left;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .header {
+    margin: 0;
+    position: fixed;
+    background: rgba(113, 129, 131, 1);
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    top: 1;
+    left: 0;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  .mbbar {
+    display: none;
+  }
+  .header-top {
+    padding: 0 0 0px 0;
+    margin: 0;
   }
 
-.dropdown .dropbtn {
-  font-size: 13px;  
-	line-height: 30px;
-	font-weight: 700;
-	letter-spacing: -0.2px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
- a:hover {
-  color: coral;
- }
- .dropdown:hover .dropbtn {
-   color: coral;
-}
+  .header-in {
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  min-width: 160px;
-  height: auto;
-  background-color: rgba(113, 129, 131, 1);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 999;
-}
+  .header-logo {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0 10px 14px;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+    background: #ffffff;
+  }
 
-.dropdown-content a {
-  float: none;
-  color: coral;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  font-size: 13px;
-}
+  .header-logo a {
+    text-align: center;
+    display: inline-block;
+  }
 
-.dropdown-content a:hover {
-  color: white;
-  background-color: coral;
-}
+  .header-logo a img {
+    width: 40px;
+    height: auto;
+    object-fit: cover;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .nav-shadow {
+    position: relative;
+  }
 
+  nav {
+    /*box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.2);*/
+
+    position: absolute;
+    top: 118px;
+    margin: 0;
+    width: 100%;
+
+    background: rgba(113, 129, 131, 1);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+    -moz-: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+    -ms-: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+    -o-: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+
+    clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 100%, 0 53%);
+    padding: 23px 0 29px 0;
+  }
+
+  .nav-in {
+  }
+
+  nav ul li {
+    padding: 0 17px 33px;
+  }
+
+  ul li a {
+    float: none;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+  }
+  ul li.active a {
+    color: #000;
+  }
+
+  /*--sticky header--*/
+
+  @media only screen and (max-width: 867px) {
+    .header {
+      display: none;
+    }
+    .mbbar {
+      display: block;
+      margin: 0;
+      position: fixed;
+      background: rgba(113, 129, 131, 1);
+      width: 100%;
+      height: auto;
+      z-index: 999;
+      top: 1;
+      left: 0;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 11px;
+    }
+    .border-meghna {
+      width: 100%;
+    }
+    .news {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .latestnews {
+      overflow-y: auto;
+    }
+    .slideshow-container {
+      margin-top: 20px !important;
+    }
+    .mainc {
+      margin: 10px 4px 40px 4px !important;
+    }
+    .title {
+      max-width: 200px;
+      height: max-content;
+      position: relative;
+      font-size: 15px;
+    }
+    label {
+      width: 100px;
+      height: 5px;
+      position: relative;
+      font-size: 1em;
+    }
+  }
+
+  .dropdown {
+    float: left;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  a:hover {
+    color: coral;
+  }
+  .dropdown:hover .dropbtn {
+    color: coral;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    min-width: 160px;
+    height: auto;
+    background-color: rgba(113, 129, 131, 1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: coral;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .dropdown-content a:hover {
+    color: white;
+    background-color: coral;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 </style>
 <div class="header">
-            <div class="header-top">
-               <div class="header-in">
-                  <div class="header-logo position-relative">
-                     <a href="/" id="return-to-top"><img src="/MES Logo.png" alt="logo"></a>
-                     
-                  </div>
-                   <ul class="clearfix d-flex flex-wrap justify-content-center align-items-center">
- 
-
-
-
-
-
-                           <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/about"> <div class="dropdown"><label class="dropbtn">About Us</label></div> </a></li>
-<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="/services"><div class="dropdown"><label class="dropbtn">Our Service</label></div></a></li>
-<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="/marketdata"><div class="dropdown">
-    <label class="dropbtn">Market Data
-      <i class="fa fa-caret-down"></i>
-    </label>
-    <div class="dropdown-content">
-      <a href="#">Exchange Rate</a>
-      <a href="#">YSX</a>
-      <a href="#">Inflation</a>
-    </div>
-  </div></a></li>
-<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="/tax"><div class="dropdown">
-    <label class="dropbtn">Tax
-      <i class="fa fa-caret-down"></i>
-    </label>
-    <div class="dropdown-content">
-      <a href="#">Tax Calendar</a>
-      <a href="#">Tax Filling Templates</a>
-      <a href="#">Tax Calculator</a>
-    </div>
-  </div></a></li>
-<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="/news"><div class="dropdown">
-    <label class="dropbtn">News
-      <i class="fa fa-caret-down"></i>
-    </label>
-    <div class="dropdown-content">
-      <a href="#">Announcement</a>
-      <a href="#">Law & Regulations</a>
-    </div>
-  </div></a></li>
-<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="/learning"><div class="dropdown"><label class="dropbtn">Learning Center</label></div></a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Resource</label></div></a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Events</label></div></a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Contact Us</label></div></a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Finacial Calculator</label></div></a></li>
-<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#target8"><div class="dropdown"><label class="dropbtn">Job Links</label></div></a></li>
-</ul>
-
-                  <nav>
-                    
-                    
-                  </nav>
-                           
-               </div>
-            </div>
-         </div>
-
-<div class="mbbar navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Tenth navbar example">
-    <div class="container-fluid">
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample08" style="">
-        <ul class="navbar-nav">
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/services" tabindex="-1" >Our Services</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/marketdata" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Market Data</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown08">
-              <li><a class="dropdown-item" href="#">Exchange Rate</a></li>
-              <li><a class="dropdown-item" href="#">YSX</a></li>
-              <li><a class="dropdown-item" href="#">Inflation</a></li>
-            </ul>
-          </li>
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/tax" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Tax</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown08">
-              <li><a class="dropdown-item" href="#">Tax Calender</a></li>
-              <li><a class="dropdown-item" href="#">Tax Filling Templates</a></li>
-              <li><a class="dropdown-item" href="#">Tax Calculator</a></li>
-            </ul>
-          </li>
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/news" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">News</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown08">
-              <li><a class="dropdown-item" href="#">Announcement</a></li>
-              <li><a class="dropdown-item" href="#">Law and Regulations</a></li>
-             
-            </ul>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/learning">Learning Center</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/resource">Resource</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/event">Events</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/calculator">Finicial Calculator</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/joblink">Job Link</a>
-          </li>
-        </ul>
+  <div class="header-top">
+    <div class="header-in">
+      <div class="header-logo position-relative">
+        <a href="/" id="return-to-top"
+          ><img src="/MES Logo.png" alt="logo"
+        /></a>
       </div>
-      <a class="navbar-brand" href="/">
-      <img src="/MES Logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-     
-    </a>
-    </div>
+      <ul
+        class="
+          clearfix
+          d-flex
+          flex-wrap
+          justify-content-center
+          align-items-center
+        "
+      >
+        <li
+          id="menu-item-9"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-9
+          "
+        >
+          <a href="/about">
+            <div class="dropdown"><label class="dropbtn">About Us</label></div>
+          </a>
+        </li>
+        <li
+          id="menu-item-11"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-11
+          "
+        >
+          <a href="/services"
+            ><div class="dropdown">
+              <label class="dropbtn">Our Service</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-12"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-12
+          "
+        >
+          <a href="/marketdata"
+            ><div class="dropdown">
+              <label class="dropbtn"
+                >Market Data
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <div class="dropdown-content">
+                <a href="#">Exchange Rate</a>
+                <a href="#">YSX</a>
+                <a href="#">Inflation</a>
+              </div>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-13"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-13
+          "
+        >
+          <a href="/tax"
+            ><div class="dropdown">
+              <label class="dropbtn"
+                >Tax
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <div class="dropdown-content">
+                <a href="#">Tax Calendar</a>
+                <a href="#">Tax Filling Templates</a>
+                <a href="#">Tax Calculator</a>
+              </div>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-14"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-14
+          "
+        >
+          <a href="/news"
+            ><div class="dropdown">
+              <label class="dropbtn"
+                >News
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <div class="dropdown-content">
+                <a href="#">Announcement</a>
+                <a href="#">Law & Regulations</a>
+              </div>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-15"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="/learning"
+            ><div class="dropdown">
+              <label class="dropbtn">Learning Center</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-16"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="#target8"
+            ><div class="dropdown">
+              <label class="dropbtn">Resource</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-16"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="#target8"
+            ><div class="dropdown">
+              <label class="dropbtn">Events</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-16"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="#target8"
+            ><div class="dropdown">
+              <label class="dropbtn">Contact Us</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-16"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="#target8"
+            ><div class="dropdown">
+              <label class="dropbtn">Finacial Calculator</label>
+            </div></a
+          >
+        </li>
+        <li
+          id="menu-item-16"
+          class="
+            menu-item menu-item-type-custom menu-item-object-custom menu-item-15
+          "
+        >
+          <a href="#target8"
+            ><div class="dropdown">
+              <label class="dropbtn">Job Links</label>
+            </div></a
+          >
+        </li>
+      </ul>
 
-  </div>         
+      <nav></nav>
+    </div>
+  </div>
+</div>
+
+<div
+  class="mbbar navbar navbar-expand-xl navbar-dark bg-dark"
+  aria-label="Tenth navbar example"
+>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample08"
+      aria-controls="navbarsExample08"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="navbar-collapse justify-content-md-center collapse"
+      id="navbarsExample08"
+      style=""
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services" tabindex="-1">Our Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/marketdata"
+            id="dropdown08"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Market Data</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdown08">
+            <li><a class="dropdown-item" href="#">Exchange Rate</a></li>
+            <li><a class="dropdown-item" href="#">YSX</a></li>
+            <li><a class="dropdown-item" href="#">Inflation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/tax"
+            id="dropdown08"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Tax</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdown08">
+            <li><a class="dropdown-item" href="#">Tax Calender</a></li>
+            <li><a class="dropdown-item" href="#">Tax Filling Templates</a></li>
+            <li><a class="dropdown-item" href="#">Tax Calculator</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/news"
+            id="dropdown08"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >News</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdown08">
+            <li><a class="dropdown-item" href="#">Announcement</a></li>
+            <li><a class="dropdown-item" href="#">Law and Regulations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/learning">Learning Center</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resource">Resource</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/event">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calculator">Finicial Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/joblink">Job Link</a>
+        </li>
+      </ul>
+    </div>
+    <a class="navbar-brand" href="/">
+      <img
+        src="/MES Logo.png"
+        alt=""
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+  </div>
+</div>

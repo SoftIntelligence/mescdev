@@ -121,11 +121,11 @@ a:hover {
 }
 
 .border-meghna {
-  border-top: 2px solid rgba(236, 239, 241, 0.07);
+  border-top: 2px solid rgba(180, 180, 180, 0.8);
   height: 1px;
-  margin: 15px auto 0;
+  width: 25%;
+  margin: auto;
   position: relative;
-  width: 30%;
 }
 
 .border-meghna:before {
@@ -297,7 +297,7 @@ a:hover {
 }
 
 .title {
-  padding-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .title h2 {
@@ -1335,7 +1335,7 @@ a:hover {
 }
 
 .social-profile ul li a {
-  color: #4e595f;
+  color: #747d81;
   display: block;
   font-size: 16px;
 }
@@ -1509,8 +1509,7 @@ input#e-mail,
 }
 
 .social-icon ul li a {
-  background-color: #26292e;
-  border: 1px solid transparent;
+  background-color: #343638;
   display: block;
   height: 70px;
   width: 70px;
@@ -1531,7 +1530,7 @@ input#e-mail,
   display: inline-block;
   font-size: 32px;
   line-height: 70px;
-  margin: 0;
+  margin-left: 4px;
   opacity: 0.3;
   transition: all 400ms ease-out 0s;
 }
@@ -2360,54 +2359,54 @@ figcaption {
 }
 
 .latestnews{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: auto;
+  max-height: 400px;
   background-color: #D3D3D3;
   color: black;
-  overflow-x: scroll;
-  
-  padding: 80px;
+  overflow-x: auto;
+  padding: 10px 20px;
 }
 .newsbox{
-  display: block;
-  width: 25%;
+  display: flex;
+  align-items: center;
+  width: 320px;
   height: 180px;
   background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 10px;
-  border-color: black;
-  border-width: 1px;
+  border-radius: 10px;
   cursor: pointer;
   margin: 5px;
 
 }
 .news{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
 }
 .thumb{
-  width: 180px;
-  height: 180px;
-  position: absolute;
-  margin-top: 0;
-  box-shadow:  3px 3px 5px 6px #ccc;
   object-fit: cover;
-  display: inline-block;
-
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.thumb-c {
+  height: 100%;
+  width: 45%;
 }
 .info{
-  display: inline-block;
-  position: absolute;
-  width: 60%;
-  height: auto;
-  margin-left: 185px;
-  padding: 10px;
-
+  margin: auto 4px;
+  margin-left: 10px;
+  flex: 2;
+  max-height: 120px;
+  overflow-y: hidden;
 }
 .title{
-    display: block;
     width: 100%;
-    height: 20px;
+    height: max-content;
     font-size: 25px;
 }
 .services{
