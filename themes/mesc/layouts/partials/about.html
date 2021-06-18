@@ -247,12 +247,12 @@ assistant expertise than larger companies who actually can afford to have this e
 			<div class="col-lg-4 text-center wow fadeInUp" data-wow-duration="500ms" style="padding-bottom:20px;">
 				<div class="block">
 					<div class="icon-box">
-						{{with .icon}}<i class="{{ . }}"></i>{{ end }}
+						{{with .icon}}<i class="{{ . }}" style="color: coral"></i>{{ end }}
 					</div>
 					{{"<!-- Express About Yourself -->" | safeHTML}}
 					<div class="content text-center">
 						<h3>{{ .title }}</h3>
-						<p>{{ .content | markdownify }}</p>
+						<p style="color: white">{{ .content | markdownify }}</p>
 					</div>
 				</div>
 			</div>
