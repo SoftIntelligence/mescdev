@@ -21,7 +21,7 @@ getartapi()
 	async function getartapi() { 
 
   // Storing response 
-  const response = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off&originalImg=true", {
+  const response = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off&mkt=en-us&category=business&originalImg=true", {
   "method": "GET",
   "headers": {
     "x-bingapis-sdk": "true",
