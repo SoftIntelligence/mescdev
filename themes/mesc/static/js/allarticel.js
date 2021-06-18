@@ -16,7 +16,7 @@ const queryString = window.location.search;
 async function getartapi(url) { 
 
   // Storing response 
-  const response = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off", {
+  const response = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off&mkt=en-us&category=business&originalImg=true", {
   "method": "GET",
   "headers": {
     "x-bingapis-sdk": "true",
@@ -54,7 +54,7 @@ function show3(data) {
    article += `
  <div class="col-lg-8 mx-auto mb-5" onclick="location.href='${data.value[key].url}'">
         <article class="card rounded-0 border-0">
-          <img src="${data.value[key].image.thumbnail.contentUrl}" >
+         
           <div class="card-body px-0">
             <a  class="h4 d-block">${data.value[key].name}</a>
             
